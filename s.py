@@ -641,7 +641,6 @@ Y = "\033[1;93m"
 P = "\033[1;95m"
 W = "\033[0m"
 
-
 # ─────────────────────────────
 # 🔑 SHANI PREMIUM KEY SYSTEM
 # ─────────────────────────────
@@ -650,12 +649,14 @@ import os
 import hashlib
 import platform
 import requests
-import time
 import sys
+import base64
 
 from datetime import datetime
 
-APPROVED_URL = "https://raw.githubusercontent.com/S-OLD/S/main/keys.txt"
+# ================= API URL =================
+
+APPROVED_URL = "https://api.github.com/repos/S-OLD/S/contents/keys.txt"
 
 # ================= DEVICE KEY =================
 
@@ -673,90 +674,17 @@ def get_android_id():
     except:
         pass
 
-    return "UNKNOWN_ANDROID"
-
-
-def get_device_serial():
-
-    try:
-
-        serial = os.popen(
-            "getprop ro.serialno"
-        ).read().strip()
-
-        if serial and serial != "unknown":
-            return serial
-
-    except:
-        pass
-
-    return "UNKNOWN_SERIAL"
-
-
-def get_mac():
-
-    try:
-
-        mac = os.popen(
-            "cat /sys/class/net/wlan0/address"
-        ).read().strip()
-
-        if mac:
-            return mac
-
-    except:
-        pass
-
-    return "00:00:00:00:00:00"
-
-
-def get_build_info():
-
-    props = [
-
-        "getprop ro.product.brand",
-        "getprop ro.product.model",
-        "getprop ro.product.device",
-        "getprop ro.build.id",
-        "getprop ro.boot.hardware"
-
-    ]
-
-    data = ""
-
-    for prop in props:
-
-        try:
-
-            value = os.popen(prop).read().strip()
-
-            data += value
-
-        except:
-            pass
-
-    return data
+    return "ANDROID"
 
 
 def get_device_key():
 
     android_id = get_android_id()
 
-    serial = get_device_serial()
-
-    mac = get_mac()
-
-    build = get_build_info()
-
     base = (
-
         android_id +
-        serial +
-        mac +
-        build +
         platform.machine() +
         platform.system()
-
     )
 
     hash_val = hashlib.sha256(
@@ -765,22 +693,18 @@ def get_device_key():
 
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
-    final_key = ""
+    key = ""
 
-    for i in range(12):
+    # SHORT UNIQUE KEY
+    for i in range(6):
 
-        piece = hash_val[i*4:(i*4)+4]
+        part = hash_val[i*4:(i*4)+4]
 
-        index = int(piece, 16) % len(chars)
+        index = int(part, 16) % len(chars)
 
-        final_key += chars[index]
+        key += chars[index]
 
-    return (
-        f"SHANI-"
-        f"{final_key[:4]}-"
-        f"{final_key[4:8]}-"
-        f"{final_key[8:12]}"
-    )
+    return f"S-{key}"
 
 
 # ================= CHECK KEY =================
@@ -789,12 +713,25 @@ def check_key(key):
 
     try:
 
-        data = requests.get(
-            APPROVED_URL + "?t=" + str(time.time()),
-            timeout=10
-        ).text
+        headers = {
 
-        lines = data.splitlines()
+            "Cache-Control": "no-cache"
+
+        }
+
+        response = requests.get(
+            APPROVED_URL,
+            headers=headers,
+            timeout=10
+        )
+
+        data = response.json()
+
+        content = base64.b64decode(
+            data["content"]
+        ).decode()
+
+        lines = content.splitlines()
 
         now = datetime.now()
 
@@ -828,7 +765,9 @@ def check_key(key):
 
                     days = remaining.days
 
-                    hours = remaining.seconds // 3600
+                    hours = (
+                        remaining.seconds // 3600
+                    )
 
                     minutes = (
                         remaining.seconds % 3600
@@ -856,7 +795,9 @@ def check_key(key):
 
         return "not", None, None
 
-    except:
+    except Exception as e:
+
+        print(e)
 
         return "not", None, None
 
@@ -866,15 +807,15 @@ def check_key(key):
 def access_denied_block(key, status, exp=None):
 
     print(
-        "\n\033[1;91m╔══════════════════════════════════════╗\033[0m"
+        "\n\033[1;91m╔════════════════════════════╗\033[0m"
     )
 
     print(
-        "\033[1;91m║           ACCESS DENIED              ║\033[0m"
+        "\033[1;91m║       ACCESS DENIED        ║\033[0m"
     )
 
     print(
-        "\033[1;91m╚══════════════════════════════════════╝\033[0m\n"
+        "\033[1;91m╚════════════════════════════╝\033[0m\n"
     )
 
     print(
@@ -885,7 +826,7 @@ def access_denied_block(key, status, exp=None):
     if status == "expired":
 
         print(
-            "\033[1;91mYOUR KEY IS EXPIRED ✖\033[0m"
+            "\033[1;91mKEY EXPIRED ✖\033[0m"
         )
 
         print(
@@ -896,7 +837,7 @@ def access_denied_block(key, status, exp=None):
     else:
 
         print(
-            "\033[1;91mYOUR KEY IS NOT APPROVED ✖\033[0m"
+            "\033[1;91mKEY NOT APPROVED ✖\033[0m"
         )
 
 
@@ -905,60 +846,54 @@ def access_denied_block(key, status, exp=None):
 def payment_box():
 
     print(
-        "\n\033[1;92m╔══════════════════════════════════════╗\033[0m"
+        "\n\033[1;92m╔════════════════════════════╗\033[0m"
     )
 
     print(
-        "\033[1;92m║  ACCOUNT NAME  :  MUHAMMAD SAFDAR    ║\033[0m"
+        "\033[1;92m║ Easypaisa : 03060725589   ║\033[0m"
     )
 
     print(
-        "\033[1;92m╠══════════════════════════════════════╣\033[0m"
+        "\033[1;92m║ JazzCash  : 03060725589   ║\033[0m"
     )
 
     print(
-        "\033[1;92m║  Easypaisa: 03060725589              ║\033[0m"
+        "\033[1;92m╠════════════════════════════╣\033[0m"
     )
 
     print(
-        "\033[1;92m║  JazzCash : 03060725589              ║\033[0m"
+        "\033[1;92m║ 3 DAYS  : 150 PKR         ║\033[0m"
     )
 
     print(
-        "\033[1;92m╠══════════════════════════════════════╣\033[0m"
+        "\033[1;92m║ 7 DAYS  : 300 PKR         ║\033[0m"
     )
 
     print(
-        "\033[1;92m║  3 DAYS   : 150 PKR                  ║\033[0m"
+        "\033[1;92m║ 30 DAYS : 500 PKR         ║\033[0m"
     )
 
     print(
-        "\033[1;92m║  7 DAYS   : 300 PKR                  ║\033[0m"
+        "\033[1;92m╚════════════════════════════╝\033[0m"
     )
 
     print(
-        "\033[1;92m║  30 DAYS  : 500 PKR                  ║\033[0m"
-    )
-
-    print(
-        "\033[1;92m╚══════════════════════════════════════╝\033[0m"
-    )
-
-    print(
-        "\nPress Enter To Send Message To Admin"
+        "\nPress Enter To Contact Admin"
     )
 
     input()
 
     msg = (
-        f"Assalam O Alaikum Shani Bhai,%0A%0A"
-        f"My Device Key Is : {user_key}%0A%0A"
-        f"Please Approve My Key."
+        f"Assalam O Alaikum,%0A%0A"
+        f"My Key : {user_key}%0A%0A"
+        f"Please Approve."
     )
 
     os.system(
+
         f'am start -a android.intent.action.VIEW '
         f'-d "https://wa.me/923200795589?text={msg}"'
+
     )
 
 
@@ -968,19 +903,13 @@ def payment_box():
 
 try:
 
-    # YAHAN TUMHARA PEHLE SE BOOT + LOGO + MAIN TOOL RAHEGA
-
-    # Example:
-    # logo()
-    # main_tool()
+    # YAHAN APNA LOGO / MAIN TOOL LAGAO
 
     key = get_device_key()
 
     user_key = key
 
     status, exp, left = check_key(key)
-
-    # MAIN TOOL KE BAAD KEY SYSTEM CHALEGA
 
     if status == "approved":
 
@@ -996,8 +925,7 @@ try:
             f"\033[1;93mLEFT:\033[0m {left}"
         )
 
-        # APPROVED USER KA NEXT SYSTEM
-        # yahan apna next code lagao
+        # APPROVED USER CODE
 
     else:
 
