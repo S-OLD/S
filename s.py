@@ -420,30 +420,28 @@ def linex():
     print('\x1b[1;96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m')
 
 def BNG_71_():
-    """
-    Main menu function.
-    """
+
     while True:
 
         ____banner____()
 
-        print('\x1b[38;5;45m╔═[\x1b[1;97m01\x1b[38;5;45m]═➤ \x1b[38;5;51mOLD CLONE \x1b[38;5;45m✦\x1b[0m')
-        linex()
+        __Jihad__ = input(
+            f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m "
+        )
 
-        __Jihad__ = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
-
-        # VALID OPTIONS
         if __Jihad__ in ('1', '01', 'a'):
+
             old_clone()
-            break   # correct option -> exit menu loop
 
-        # INVALID OPTION
+            break
+
         else:
+
             print(f"\n{rad}⚠ Invalid option, try again...\x1b[0m")
+
             time.sleep(1)
-            continue   # same menu repeat
 
-
+            continue
 
 def old_clone():
     """
