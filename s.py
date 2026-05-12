@@ -151,8 +151,6 @@ def boot_screen():
 
     import os, sys, time
 
-    os.system('cls' if 'win' in sys.platform else 'clear')
-
     # ===== COLORS =====
 
     C = '\033[1;96m'
@@ -162,13 +160,17 @@ def boot_screen():
     GRAY = '\033[1;90m'
     X = '\033[0m'
 
-    # ===== CUSTOM SPEEDS =====
+    # ===== CLEAR FIRST =====
 
-    delay_1 = 0.05   # Assalam O Alaikum
-    delay_2 = 0.04   # SYSTEM BOOT
-    delay_3 = 0.02   # Security Protocols
-    delay_4 = 0.02   # Loading Modules
-    delay_5 = 0.03   # Ready
+    os.system('clear')
+
+    # ===== SPEEDS =====
+
+    delay_1 = 0.05
+    delay_2 = 0.04
+    delay_3 = 0.02
+    delay_4 = 0.02
+    delay_5 = 0.03
 
     # ===== BOOT LINES =====
 
@@ -186,15 +188,13 @@ def boot_screen():
 
     ]
 
-    # ===== PRINT SYSTEM =====
+    # ===== ANIMATION =====
 
     for symbol, text, color, delay in boot_lines:
 
-        # START BRACKET
         sys.stdout.write(C + f"{symbol}─[" + X + " ")
         sys.stdout.flush()
 
-        # TEXT EFFECT
         for char in text:
 
             sys.stdout.write(color + char + X)
@@ -202,15 +202,16 @@ def boot_screen():
 
             time.sleep(delay)
 
-        # END BRACKET SAME COLOR AS START
         sys.stdout.write(C + " ]" + X + "\n")
         sys.stdout.flush()
 
         time.sleep(0.15)
 
-    # ===== AUTO CLEAR FOR NEW PAGE =====
+    # ===== DIRECT NEW PAGE =====
 
-    os.system('cls' if 'win' in sys.platform else 'clear')
+    time.sleep(0.1)
+
+    os.system('clear')
     
 # ================= MAIN BANNER =================
 
@@ -257,27 +258,22 @@ def ____banner____():
 
     # ================= TOP PANEL =================
 
-    print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
+print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
 
-    logo = [
-    "███████╗██╗  ██╗ █████╗ ███╗   ██╗██╗",
-    "██╔════╝██║  ██║██╔══██╗████╗  ██║██║",
-    "███████╗███████║███████║██╔██╗ ██║██║",
-    "╚════██║██╔══██║██╔══██║██║╚██╗██║██║",
-    "███████║██║  ██║██║  ██║██║ ╚████║██║",
-    "╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
-    ]
+logo = [
+"███████╗██╗  ██╗ █████╗ ███╗   ██╗██╗",
+"██╔════╝██║  ██║██╔══██╗████╗  ██║██║",
+"███████╗███████║███████║██╔██╗ ██║██║",
+"╚════██║██╔══██║██╔══██║██║╚██╗██║██║",
+"███████║██║  ██║██║  ██║██║ ╚████║██║",
+"╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
+]
 
-    for line in logo:
+for line in logo:
 
-        print(
-            C + "│" +
-            G + line.center(61) +
-            C + "│"
-        )
+    print(C + "│ " + G + line.center(55) + C + " │")
 
-    print(C + "├─────────────────────────────────────────────────────────┤" + X)
-
+print(C + "├─────────────────────────────────────────────────────────┤" + X)
     # ================= DETAILS =================
 
     print(
@@ -412,9 +408,9 @@ def linex():
 
 def BNG_71_():
 
+    ____banner____()
+    
     while True:
-
-        ____banner____()
 
         # OLD CLONE OPTION
         print(C + "│ " + G + "<1>" + W + " OLD CLONE".ljust(52) + C + "│")
