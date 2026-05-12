@@ -1011,8 +1011,6 @@ def access_denied_block(key, status, exp=None):
 
 try:
 
-    # ================= START LOGO =================
-
     boot_screen()
 
     key = get_device_key()
@@ -1021,43 +1019,16 @@ try:
 
     status, exp, left = check_key(key)
 
-    # ================= APPROVED =================
+    globals()['exp'] = exp
+    globals()['left'] = left
 
-    if status == "approved":
-
-        BNG_71_()
-
-    # ================= NOT APPROVED =================
-
-    else:
-
-        ____banner____()
-
-        access_denied_block(
-            key,
-            status,
-            exp
-        )
-
-        sys.exit()
-
-# ================= NO INTERNET =================
+    # OPEN MAIN MENU
+    BNG_71_()
 
 except requests.exceptions.ConnectionError:
 
-    print(
-        "\033[1;91m✖ NO INTERNET CONNECTION\033[0m"
-    )
-
-    exit()
-
-# ================= ERROR =================
+    print("\033[1;91m✖ NO INTERNET CONNECTION\033[0m")
 
 except Exception as e:
 
-    print(
-        "\033[1;91mERROR:\033[0m",
-        e
-    )
-
-    exit()
+    print("\033[1;91mERROR:\033[0m", e)
