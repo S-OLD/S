@@ -177,7 +177,7 @@ def boot():
 
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.04)
+        time.sleep(0.07)
 
     print("     ║\033[0m")
 
@@ -207,7 +207,7 @@ def boot():
 
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.02)
+        time.sleep(0.03)
 
     print("  ║\033[0m")
 
@@ -235,7 +235,7 @@ def boot():
 
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.03)
 
     print("                      ║\033[0m")
 
