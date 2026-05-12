@@ -280,78 +280,74 @@ def ____banner____():
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
     
     # ================= DETAILS =================
-
+    
     print(
-        C + "│ " +
-        G + "◈" + W + " OWNER       " +
-        C + ":" +
-        W + " SHANI MALIK".ljust(40) +
-        C + "│"
-    )
-
+    C + "│ " +
+    G + "◈" + W + " OWNER       " +
+    C + ":" +
+    W + " SHANI MALIK".ljust(41) +
+    C + "│"
+)
+    
     print(
-        C + "│ " +
-        G + "◈" + W + " WHATSAPP    " +
-        C + ":" +
-        G + " +923200795589".ljust(40) +
-        C + "│"
-    )
-
+    C + "│ " +
+    G + "◈" + W + " WHATSAPP    " +
+    C + ":" +
+    G + " +923200795589".ljust(41) +
+    C + "│"
+)
+    
     print(
-        C + "│ " +
-        G + "◈" + W + " TOOL TYPE   " +
-        C + ":" +
-        Y + " PREMIUM PAID TOOL".ljust(40) +
-        C + "│"
-    )
-
+    C + "│ " +
+    G + "◈" + W + " TOOL TYPE   " +
+    C + ":" +
+    Y + " PREMIUM PAID TOOL".ljust(41) +
+    C + "│"
+)
+    
     print(
-        C + "│ " +
-        G + "◈" + W + " DEVICE KEY  " +
-        C + ":" +
-        P + f" {user_key}".ljust(40) +
-        C + "│"
-    )
-
+    C + "│ " +
+    G + "◈" + W + " DEVICE KEY  " +
+    C + ":" +
+    P + f" {user_key}".ljust(41) +
+    C + "│"
+)
+    
     print(
-        C + "│ " +
-        G + "◈" + W + " EXPIRY DATE " +
-        C + ":" +
-        G + f" {exp}".ljust(40) +
-        C + "│"
-    )
-
+    C + "│ " +
+    G + "◈" + W + " EXPIRY DATE " +
+    C + ":" +
+    G + f" {exp}".ljust(41) +
+    C + "│"
+)
+    
     print(
-        C + "│ " +
-        G + "◈" + W + " TIME LEFT   " +
-        C + ":" +
-        R + f" {left}".ljust(40) +
-        C + "│"
-    )
-
-    print(C + "├─────────────────────────────────────────────────────────┤" + X)
-
-    print(
-        C + "│ " +
-        Y + "⚡ SHORTCUTS : " +
-        W + "CTRL+C " +
-        G + "(Pause)" +
-        W + " | CTRL+Z " +
-        R + "(Stop)" +
-        " " * 13 +
-        C + "│"
-    )
-
-    print(C + "└─────────────────────────────────────────────────────────┘" + X)
-
-    print()
-
-    # ================= SHANI SETUP =================
-
-    print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
-
+    C + "│ " +
+    G + "◈" + W + " TIME LEFT   " +
+    C + ":" +
+    R + f" {left}".ljust(41) +
+    C + "│"
+)
+    
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
     
+    print(
+    C + "│ " +
+    Y + "⚡ SHORTCUTS : " +
+    W + "CTRL+C " +
+    G + "(Pause)" +
+    W + " | CTRL+Z " +
+    R + "(Stop)" +
+    " " * 14 +
+    C + "│"
+)
+    
+    print(C + "└─────────────────────────────────────────────────────────┘" + X)
+
+# ================= SHANI SETUP =================
+
+print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
+print(C + "├─────────────────────────────────────────────────────────┤" + X)
 def creationyear(uid):
     """
     Estimates the Facebook account creation year based on the UID.
