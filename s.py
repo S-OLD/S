@@ -837,9 +837,9 @@ def access_denied_block(key, status, exp=None):
     else:
 
         print(
-            "\033[1;91mYOUR KEY IS NOT APPROVED ✖\033[0m"
+            "\033[1;91mYOUR KEY IS NOT APPROVED ❌\033[0m"
+            "\033[1;97mSEND PAYMENT, TAKE SCREENSHOT AND GET APPROVAL\033[0m"
         )
-
 
 # ================= PAYMENT BOX =================
 
