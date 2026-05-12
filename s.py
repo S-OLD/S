@@ -147,32 +147,97 @@ sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
 
 import os
 import time
+import sys
+
+# TYPE EFFECT FUNCTION
+def type_text(text, color="", delay=0.04):
+
+    sys.stdout.write(color)
+
+    for char in text:
+
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+
+    sys.stdout.write("\033[0m\n")
+
 
 def boot():
+
     os.system("clear")
 
     print("\033[1;92m╔══════════════════════════════════════╗\033[0m")
 
-    text1 = "WELCOME TO SHANI PREMIUM TOOL"
-    print(f"\033[1;92m║    {text1}     ║\033[0m")
+    # LINE 1
+    sys.stdout.write("\033[1;92m║    ")
+    sys.stdout.flush()
+
+    for char in "WELCOME TO SHANI PREMIUM TOOL":
+
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.04)
+
+    print("     ║\033[0m")
 
     time.sleep(0.2)
+
     print("\033[1;92m╠══════════════════════════════════════╣\033[0m")
 
-    text2 = "ASSALAMUALAIKUM"
-    print(f"\033[1;96m║  {text2}                     ║\033[0m")
+    # LINE 2
+    sys.stdout.write("\033[1;96m║  ")
+    sys.stdout.flush()
+
+    for char in "ASSALAMUALAIKUM":
+
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.05)
+
+    print("                     ║\033[0m")
 
     time.sleep(0.3)
 
-    print("\033[1;90m║  Initializing Security Protocols...  ║\033[0m")
+    # LINE 3
+    sys.stdout.write("\033[1;90m║  ")
+    sys.stdout.flush()
+
+    for char in "Initializing Security Protocols...":
+
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.02)
+
+    print("  ║\033[0m")
 
     time.sleep(0.3)
 
-    print("\033[1;92m║  Loading Modules...                  ║\033[0m")
+    # LINE 4
+    sys.stdout.write("\033[1;92m║  ")
+    sys.stdout.flush()
+
+    for char in "Loading Modules...":
+
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+
+    print("                  ║\033[0m")
 
     time.sleep(0.3)
 
-    print("\033[1;92m║  System Ready ✔                      ║\033[0m")
+    # LINE 5
+    sys.stdout.write("\033[1;92m║  ")
+    sys.stdout.flush()
+
+    for char in "System Ready ✔":
+
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.05)
+
+    print("                      ║\033[0m")
 
     print("\033[1;92m╚══════════════════════════════════════╝\033[0m\n")
 
