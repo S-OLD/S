@@ -912,20 +912,8 @@ try:
     status, exp, left = check_key(key)
 
     if status == "approved":
-
-        print(
-            "\n\033[1;92m✔ KEY APPROVED\033[0m"
-        )
-
-        print(
-            f"\033[1;93mEXP:\033[0m {exp}"
-        )
-
-        print(
-            f"\033[1;93mLEFT:\033[0m {left}"
-        )
-
-        # APPROVED USER CODE
+        
+        BNG_71_()
 
     else:
 
