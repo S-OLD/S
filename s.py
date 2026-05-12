@@ -476,6 +476,7 @@ def old_clone():
     else:
         print(f"\n[×]{rad} Choose Value Option... ")
         BNG_71_()
+        clear()
 
 def old_One():
     """
@@ -494,10 +495,12 @@ def old_One():
     print("\x1b[1;95m╚══════════════════════════════════╝\x1b[0m\n")
     ask = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     linex()
+    clear()
     print(f"\x1b[38;5;51m╭─[★]─➤ EXAMPLE {Y}:{G} 20000 • 30000 • 99999\x1b[0m")
     print(f"\x1b[38;5;51m╰───────────────────────────────\x1b[0m")
     limit = choice = input(f"\x1b[38;5;196m────────────────────────────────➤ \x1b[1;37m(★)\x1b[38;5;196m>× \x1b[38;5;46mCHOICE {W} : {Y} \x1b[38;5;196m➤\x1b[0m ")
     linex()
+    clear()
     star = '10000'
     for _ in range(int(limit)):
         data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
@@ -511,6 +514,7 @@ def old_One():
     print("\x1b[38;5;196m└──────────────────────────────┘\x1b[0m")
     linex()
     meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
+    clear()
     with tred(max_workers=10) as pool:
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
