@@ -145,113 +145,93 @@ def window1():
 # Set window title
 sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
 
-# ===== IMPORTS =====
+def ____banner____():
 
-import os
-import sys
+    # COLORS
+    R = '\033[1;91m'
+    G = '\033[1;92m'
+    Y = '\033[1;93m'
+    B = '\033[1;94m'
+    P = '\033[1;95m'
+    C = '\033[1;96m'
+    W = '\033[1;97m'
+    X = '\033[0m'
 
-# ===== COLORS =====
+    # AUTO VALUES
+    global user_key, exp, left
 
-R = '\033[1;91m'
-G = '\033[1;92m'
-Y = '\033[1;93m'
-B = '\033[1;94m'
-P = '\033[1;95m'
-C = '\033[1;96m'
-W = '\033[1;97m'
-X = '\033[0m'
+    try:
+        user_key
+    except:
+        user_key = "LOADING..."
 
-# ===== CLEAR =====
+    try:
+        exp
+    except:
+        exp = "N/A"
 
-os.system('cls' if 'win' in sys.platform else 'clear')
+    try:
+        left
+    except:
+        left = "N/A"
 
-# =========================================================
-# YE VARIABLES NICHE WALI SCRIPT AUTOMATIC SET KREGI
-# YAHAN SIRF SHOW HONGI
-# =========================================================
+    # ================= TOP PANEL =================
 
-# Example:
-# user_key = generated_key
-# exp = expiry_date
-# left = remaining_time
+    print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
 
-# AGAR VALUE NA MILE TO DEFAULT SHOW HOGA
-try:
-    user_key
-except:
-    user_key = "LOADING..."
+    logo = [
+    " ██╗  ██╗ █████╗ ███╗   ██╗██╗",
+    " ██║  ██║██╔══██╗████╗  ██║██║",
+    " ███████║███████║██╔██╗ ██║██║",
+    " ██╔══██║██╔══██║██║╚██╗██║██║",
+    " ██║  ██║██║  ██║██║ ╚████║██║",
+    " ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
+    ]
 
-try:
-    exp
-except:
-    exp = "N/A"
+    for line in logo:
+        print(C + "│" + G + line.center(61) + C + "│")
 
-try:
-    left
-except:
-    left = "N/A"
+    print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
+    print(C + "│ " + G + "◈" + W + " OWNER     " + C + ":" + W + " SHANI MALIK".ljust(44) + C + "│")
 
-# ================= TOP PANEL =================
+    print(C + "│ " + G + "◈" + W + " WHATSAPP  " + C + ":" + G + " +923200795589".ljust(44) + C + "│")
 
-print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
+    print(C + "│ " + G + "◈" + W + " TOOL TYPE " + C + ":" + Y + " PREMIUM PAID TOOL".ljust(44) + C + "│")
 
-logo = [
-" ██╗  ██╗ █████╗ ███╗   ██╗██╗",
-" ██║  ██║██╔══██╗████╗  ██║██║",
-" ███████║███████║██╔██╗ ██║██║",
-" ██╔══██║██╔══██║██║╚██╗██║██║",
-" ██║  ██║██║  ██║██║ ╚████║██║",
-" ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
-]
+    print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-for line in logo:
-    print(C + "│" + G + line.center(61) + C + "│")
+    print(C + "│ " + Y + "⚡ SHORTCUTS : " + W + "CTRL+C " + G + "(Pause)" + W + " | CTRL+Z " + R + "(Stop)" + " "*13 + C + "│")
 
-print(C + "├─────────────────────────────────────────────────────────┤" + X)
+    print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
-# ===== INFO =====
+    # ================= SHANI SETUP =================
 
-print(C + "│ " + G + "◈" + W + " OWNER     " + C + ":" + W + " SHANI MALIK".ljust(44) + C + "│")
+    print()
 
-print(C + "│ " + G + "◈" + W + " WHATSAPP  " + C + ":" + G + " +923200795589".ljust(44) + C + "│")
+    print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
 
-print(C + "│ " + G + "◈" + W + " TOOL TYPE " + C + ":" + Y + " PREMIUM PAID TOOL".ljust(44) + C + "│")
+    print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-print(C + "├─────────────────────────────────────────────────────────┤" + X)
+    print(C + "│ " + G + "<1>" + W + " DEVICE KEY".ljust(52) + C + "│")
 
-print(C + "│ " + Y + "⚡ SHORTCUTS : " + W + "CTRL+C " + G + "(Pause)" + W + " | CTRL+Z " + R + "(Stop)" + " "*13 + C + "│")
+    print(C + "│ " + G + "<2>" + W + " EXPIRY DATE".ljust(52) + C + "│")
 
-print(C + "└─────────────────────────────────────────────────────────┘" + X)
+    print(C + "│ " + G + "<3>" + W + " TIME LEFT".ljust(52) + C + "│")
 
-# ================= SHANI SETUP =================
+    print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-print()
+    print(C + "│ " + W + "DEVICE KEY : " + P + f"{user_key}".ljust(42) + C + "│")
 
-print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
+    print(C + "│ " + W + "EXPIRY     : " + G + f"{exp}".ljust(42) + C + "│")
 
-print(C + "├─────────────────────────────────────────────────────────┤" + X)
+    print(C + "│ " + W + "TIME LEFT  : " + R + f"{left}".ljust(42) + C + "│")
 
-# ===== OPTIONS =====
+    print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
-print(C + "│ " + G + "<1>" + W + " DEVICE KEY".ljust(52) + C + "│")
+if __name__ == "__main__":
+    ____banner____()
 
-print(C + "│ " + G + "<2>" + W + " EXPIRY DATE".ljust(52) + C + "│")
-
-print(C + "│ " + G + "<3>" + W + " TIME LEFT".ljust(52) + C + "│")
-
-print(C + "├─────────────────────────────────────────────────────────┤" + X)
-
-# ===== AUTO SHOW VALUES =====
-
-print(C + "│ " + W + "DEVICE KEY : " + P + f"{user_key}".ljust(42) + C + "│")
-
-print(C + "│ " + W + "EXPIRY     : " + G + f"{exp}".ljust(42) + C + "│")
-
-print(C + "│ " + W + "TIME LEFT  : " + R + f"{left}".ljust(42) + C + "│")
-
-print(C + "└─────────────────────────────────────────────────────────┘" + X)
-    
 import os, sys
 import os, sys, time
 RESET   = "\033[0m"
