@@ -945,7 +945,7 @@ def access_denied_block(key, status, exp=None):
 
     else:
 
-        print(R + "│" + W + " YOUR KEY IS NOT APPROVED ".center(48) + R + "│")
+        print(R + "│" + W + " YOUR KEY IS NOT APPROVED ".center(47) + R + "│")
 
     print(R + "└───────────────────────────────────────────────┘" + X)
 
@@ -984,23 +984,23 @@ def access_denied_block(key, status, exp=None):
 
     print(G + "┌────────────── PAYMENT METHODS ────────────────┐" + X)
 
-    print(G + "│ " + W + "ACCOUNT NAME : " + Y + "MUHAMMAD SAFDAR".ljust(33) + G + "│")
+    print(G + "│ " + W + "ACCOUNT NAME : " + Y + "MUHAMMAD SAFDAR".ljust(31) + G + "│")
 
     print(G + "├───────────────────────────────────────────────┤" + X)
 
-    print(G + "│ " + W + "EASYPAISA : " + C + "03060725589".ljust(33) + G + "│")
+    print(G + "│ " + W + "EASYPAISA : " + C + "03060725589".ljust(34) + G + "│")
 
-    print(G + "│ " + W + "JAZZCASH  : " + C + "03060725589".ljust(33) + G + "│")
+    print(G + "│ " + W + "JAZZCASH  : " + C + "03060725589".ljust(34) + G + "│")
 
-    print(G + "│ " + W + "SADAPAY   : " + C + "03060725589".ljust(33) + G + "│")
+    print(G + "│ " + W + "SADAPAY   : " + C + "03060725589".ljust(34) + G + "│")
 
     print(G + "├───────────────────────────────────────────────┤" + X)
 
-    print(G + "│ " + W + "3 DAYS   : " + Y + "150 PKR".ljust(34) + G + "│")
+    print(G + "│ " + W + "3 DAYS   : " + Y + "150 PKR".ljust(35) + G + "│")
 
-    print(G + "│ " + W + "7 DAYS   : " + Y + "300 PKR".ljust(34) + G + "│")
+    print(G + "│ " + W + "7 DAYS   : " + Y + "300 PKR".ljust(35) + G + "│")
 
-    print(G + "│ " + W + "30 DAYS  : " + Y + "500 PKR".ljust(34) + G + "│")
+    print(G + "│ " + W + "30 DAYS  : " + Y + "500 PKR".ljust(35) + G + "│")
 
     print(G + "└───────────────────────────────────────────────┘" + X)
 
