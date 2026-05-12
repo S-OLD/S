@@ -458,7 +458,6 @@ def old_clone():
     """
     Menu for selecting old account cloning type.
     """
-    ____banner____()
     print("\x1b[38;5;201m╔══════════════════════════════════╗\x1b[0m")
     print("\x1b[38;5;201m║  \x1b[1;33mOLD ACCOUNT CRACKER\x1b[38;5;201m             ║\x1b[0m")
     print("\x1b[38;5;201m╠══════════════════════════════════╣\x1b[0m")
@@ -478,13 +477,11 @@ def old_clone():
         print(f"\n[×]{rad} Choose Value Option... ")
         BNG_71_()
 
-
 def old_One():
     """
     Cloning method for accounts from 2010-2014.
     """
     user = []
-    ____banner____()
     print("\x1b[1;96m────────────────────────────────────\x1b[0m")
     print("\x1b[1;96m➤ Select Series:\x1b[0m\n")
     print("\x1b[1;97m[\x1b[1;92m1\x1b[1;97m]\x1b[0m \x1b[1;96m100000\x1b[0m")
@@ -497,7 +494,6 @@ def old_One():
     print("\x1b[1;95m╚══════════════════════════════════╝\x1b[0m\n")
     ask = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     linex()
-    ____banner____()
     print(f"\x1b[38;5;51m╭─[★]─➤ EXAMPLE {Y}:{G} 20000 • 30000 • 99999\x1b[0m")
     print(f"\x1b[38;5;51m╰───────────────────────────────\x1b[0m")
     limit = choice = input(f"\x1b[38;5;196m────────────────────────────────➤ \x1b[1;37m(★)\x1b[38;5;196m>× \x1b[38;5;46mCHOICE {W} : {Y} \x1b[38;5;196m➤\x1b[0m ")
@@ -516,7 +512,6 @@ def old_One():
     linex()
     meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     with tred(max_workers=10) as pool:
-        ____banner____()
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
         print(f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m")
@@ -531,13 +526,11 @@ def old_One():
                 print(f"    {rad}[!] INVshaniD METHOD SELECTED")
                 break
 
-
 def old_Tow():
     """
     Cloning method for accounts with specific prefixes.
     """
     user = []
-    ____banner____()
     print("\x1b[1;96m────────────────────────────────────\x1b[0m")
     print("\x1b[1;96m➤ Select Series:\x1b[0m\n")
 
@@ -552,7 +545,6 @@ def old_Tow():
     print("\x1b[1;95m╚══════════════════════════════════╝\x1b[0m\n")
     ask = choice = input(f"\x1b[38;5;196m[SELECT]\x1b[38;5;46m {Y}:{G} \x1b[38;5;196m➤\x1b[0m ")
     linex()
-    ____banner____()
     print(f"\x1b[38;5;51m╭─[★]─➤ EXAMPLE {Y}:{G} 20000 • 30000 • 99999\x1b[0m")
     print(f"\x1b[38;5;51m╰───────────────────────────────\x1b[0m")
     limit =  choice = input(f"\x1b[38;5;196m[SELECT]\x1b[38;5;46m {Y}:{G} \x1b[38;5;196m➤\x1b[0m ")
@@ -573,7 +565,6 @@ def old_Tow():
     linex()
     meth = choice = input(f"\x1b[38;5;196m➤ \x1b[1;37mCHOICE {W}:{Y} \x1b[38;5;46m➤\x1b[0m ")
     with tred(max_workers=10) as pool:
-        ____banner____()
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
         print(f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m")
@@ -592,11 +583,9 @@ def old_Tree():
     Cloning method for accounts from 2009-2013.
     """
     user = []
-    ____banner____()
     print(f"\x1b[38;5;196m➤ \x1b[1;37mOLD CODE\x1b[0m \x1b[38;5;46m{Y}:{G}\x1b[0m \x1b[38;5;244m2009-2013\x1b[0m")
     ask = input(f"\x1b[38;5;196m➤\x1b[1;37m SELECT \x1b[0m\x1b[38;5;46m{Y}:{G}\x1b[0m ")
     linex()
-    ____banner____()
     print(f"\x1b[38;5;196m╭─[\x1b[1;37m★\x1b[38;5;196m]─➤\x1b[38;5;46m EXAMPLE {Y}:{G} \x1b[38;5;226m20000 \x1b[1;37m•\x1b[38;5;226m 30000 \x1b[1;37m•\x1b[38;5;226m 99999\x1b[0m")
     print(f"\x1b[38;5;196m╰───────────────────────────────\x1b[0m")
     limit = input(f"\x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mTOTAL ID COUNT {Y}:{G} ")
@@ -616,7 +605,6 @@ def old_Tree():
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mCHOICE {W}(1/2): {Y}").strip().upper()
     with tred(max_workers=10) as pool:
-        ____banner____()
         print(f"\x1b[1;96m[★]➤TOTAL IDS CRACK : \x1b[1;32m{limit}\x1b[0m")
         print(f"\x1b[1;96m✈ FLIGHT MODE \x1b[1;37m➤ \x1b[1;32mON\x1b[0m / \x1b[1;31mOFF{G}\x1b[0m")
         print(f"\x1b[1;32m[★]➤SELECTED:M1{G}\x1b[0m")
