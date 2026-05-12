@@ -145,56 +145,62 @@ def window1():
 # Set window title
 sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
 
-# ================= IMPORTS =================
-
-import os
-import sys
-import time
-
-# ================= COLORS =================
-
-R = '\033[1;91m'
-G = '\033[1;92m'
-Y = '\033[1;93m'
-B = '\033[1;94m'
-P = '\033[1;95m'
-C = '\033[1;96m'
-W = '\033[1;97m'
-X = '\033[0m'
-
-
 # ================= BOOT SCREEN =================
 
 def boot_screen():
 
     os.system('cls' if 'win' in sys.platform else 'clear')
 
-    lines = [
-        ("┌", "Assalam O Alaikum", G),
-        ("├", "SYSTEM BOOT", W),
-        ("├", "Initializing Security Protocols...", Y),
-        ("├", "Loading Modules...", G),
-        ("└", "System Ready ✓", G),
+    C = '\033[1;96m'
+    G = '\033[1;92m'
+    Y = '\033[1;93m'
+    W = '\033[1;97m'
+    X = '\033[0m'
+
+    # ===== CUSTOM DELAYS =====
+
+    delay_1 = 0.05   # Assalam O Alaikum
+    delay_2 = 0.04   # SYSTEM BOOT
+    delay_3 = 0.02   # Security
+    delay_4 = 0.02   # Loading
+    delay_5 = 0.03   # Ready
+
+    boot_lines = [
+
+        ("┌", "Assalam O Alaikum", G, delay_1),
+
+        ("├", "SYSTEM BOOT", W, delay_2),
+
+        ("├", "Initializing Security Protocols...", Y, delay_3),
+
+        ("├", "Loading Modules...", G, delay_4),
+
+        ("└", "System Ready ✓", G, delay_5)
+
     ]
 
-    for symbol, text, color in lines:
+    for symbol, text, color, delay in boot_lines:
 
         sys.stdout.write(C + f"{symbol}─[" + X + " ")
         sys.stdout.flush()
 
         for char in text:
+
             sys.stdout.write(color + char + X)
             sys.stdout.flush()
-            time.sleep(0.03)
+
+            time.sleep(delay)
 
         print(color + " ]" + X)
 
         time.sleep(0.2)
 
-    # BOOT SCREEN THODI DER DIKHEGI
+    # ===== SCREEN HOLD =====
+
     time.sleep(1.5)
 
-    # PURA SCREEN CLEAR HOGA
+    # ===== CLEAR SCREEN =====
+
     os.system('cls' if 'win' in sys.platform else 'clear')
 
 
@@ -202,22 +208,43 @@ def boot_screen():
 
 def ____banner____():
 
-    # AUTO VALUES
+    C = '\033[1;96m'
+    G = '\033[1;92m'
+    Y = '\033[1;93m'
+    R = '\033[1;91m'
+    P = '\033[1;95m'
+    W = '\033[1;97m'
+    X = '\033[0m'
+
     global user_key, exp, left
 
+    # ================= SAFE VALUES =================
+
     try:
-        user_key
+
+        if not user_key:
+            user_key = "LOADING..."
+
     except:
+
         user_key = "LOADING..."
 
     try:
-        exp
+
+        if not exp:
+            exp = "N/A"
+
     except:
+
         exp = "N/A"
 
     try:
-        left
+
+        if not left:
+            left = "N/A"
+
     except:
+
         left = "N/A"
 
     # ================= TOP PANEL =================
@@ -225,67 +252,113 @@ def ____banner____():
     print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
 
     logo = [
+
     "███████╗██╗  ██╗ █████╗ ███╗   ██╗██╗",
     "██╔════╝██║  ██║██╔══██╗████╗  ██║██║",
     "███████╗███████║███████║██╔██╗ ██║██║",
     "╚════██║██╔══██║██╔══██║██║╚██╗██║██║",
     "███████║██║  ██║██║  ██║██║ ╚████║██║",
     "╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
+
     ]
 
     for line in logo:
-        print(C + "│" + G + line.center(61) + C + "│")
+
+        print(
+            C + "│" +
+            G + line.center(61) +
+            C + "│"
+        )
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-    # ===== 6 DETAILS =====
+    # ================= DETAILS =================
 
-    print(C + "│ " + G + "◈" + W + " OWNER       " + C + ":" + W + " SHANI MALIK".ljust(40) + C + "│")
+    print(
+        C + "│ " +
+        G + "◈" + W + " OWNER       " +
+        C + ":" +
+        W + " SHANI MALIK".ljust(40) +
+        C + "│"
+    )
 
-    print(C + "│ " + G + "◈" + W + " WHATSAPP    " + C + ":" + G + " +923200795589".ljust(40) + C + "│")
+    print(
+        C + "│ " +
+        G + "◈" + W + " WHATSAPP    " +
+        C + ":" +
+        G + " +923200795589".ljust(40) +
+        C + "│"
+    )
 
-    print(C + "│ " + G + "◈" + W + " TOOL TYPE   " + C + ":" + Y + " PREMIUM PAID TOOL".ljust(40) + C + "│")
+    print(
+        C + "│ " +
+        G + "◈" + W + " TOOL TYPE   " +
+        C + ":" +
+        Y + " PREMIUM PAID TOOL".ljust(40) +
+        C + "│"
+    )
 
-    print(C + "│ " + G + "◈" + W + " DEVICE KEY  " + C + ":" + P + f" {user_key}".ljust(40) + C + "│")
+    print(
+        C + "│ " +
+        G + "◈" + W + " DEVICE KEY  " +
+        C + ":" +
+        P + f" {user_key}".ljust(40) +
+        C + "│"
+    )
 
-    print(C + "│ " + G + "◈" + W + " EXPIRY DATE " + C + ":" + G + f" {exp}".ljust(40) + C + "│")
+    print(
+        C + "│ " +
+        G + "◈" + W + " EXPIRY DATE " +
+        C + ":" +
+        G + f" {exp}".ljust(40) +
+        C + "│"
+    )
 
-    print(C + "│ " + G + "◈" + W + " TIME LEFT   " + C + ":" + R + f" {left}".ljust(40) + C + "│")
+    print(
+        C + "│ " +
+        G + "◈" + W + " TIME LEFT   " +
+        C + ":" +
+        R + f" {left}".ljust(40) +
+        C + "│"
+    )
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-    print(C + "│ " + Y + "⚡ SHORTCUTS : " + W + "CTRL+C " + G + "(Pause)" + W + " | CTRL+Z " + R + "(Stop)" + " "*13 + C + "│")
+    print(
+        C + "│ " +
+        Y + "⚡ SHORTCUTS : " +
+        W + "CTRL+C " +
+        G + "(Pause)" +
+        W + " | CTRL+Z " +
+        R + "(Stop)" +
+        " " * 13 +
+        C + "│"
+    )
 
     print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
     print()
 
-    # ================= OPTIONS PANEL =================
+    # ================= SHANI SETUP =================
 
     print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-    # YE OPTIONS BAAD ME TUMHARE REAL OPTIONS SE REPLACE HONGE
-
-    print(C + "│ " + G + "<1>" + W + " OPTION ONE".ljust(52) + C + "│")
-
-    print(C + "│ " + G + "<2>" + W + " OPTION TWO".ljust(52) + C + "│")
-
-    print(C + "│ " + G + "<3>" + W + " OPTION THREE".ljust(52) + C + "│")
-
-    print(C + "│ " + G + "<4>" + W + " OPTION FOUR".ljust(52) + C + "│")
+    print(
+        C + "│ " +
+        G + "<1>" +
+        W + " OLD CLONE".ljust(52) +
+        C + "│"
+    )
 
     print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
+if __name__ == "__main__":
 
-# ================= START =================
+    boot_screen()
 
-boot_screen()
-
-____banner____()
-
-# NICHE TUMHARA APPROVAL / PAYMENT SYSTEM CHALEGA
+    ____banner____()
 
 def creationyear(uid):
     """
