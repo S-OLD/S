@@ -146,105 +146,68 @@ def window1():
 sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
 
 import os
-import time
 import sys
+import time
 
-# TYPE EFFECT FUNCTION
-def type_text(text, color="", delay=0.04):
+# COLORS
+GREEN = "\033[1;92m"
+CYAN = "\033[1;96m"
+WHITE = "\033[1;97m"
+GRAY = "\033[1;90m"
+RESET = "\033[0m"
 
+# TYPE EFFECT
+def type_text(text, color=WHITE, delay=0.03):
     sys.stdout.write(color)
 
     for char in text:
-
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(delay)
 
-    sys.stdout.write("\033[0m\n")
+    sys.stdout.write(RESET + "\n")
 
 
-def boot():
-
+def boot_screen():
     os.system("clear")
 
-    print("\033[1;92m╔══════════════════════════════════════╗\033[0m")
+    # CONNECTED BRANCH DESIGN
+    boot_lines = [
+        ("┌", "Assalam O Alaikum", GREEN),
+        ("├", "SYSTEM BOOT", WHITE),
+        ("├", "Initializing Security Protocols...", GRAY),
+        ("├", "Loading Modules...", GREEN),
+        ("└", "System Ready ✓", GREEN),
+    ]
 
-    # LINE 1
-    sys.stdout.write("\033[1;92m║    ")
-    sys.stdout.flush()
+    for symbol, text, color in boot_lines:
 
-    for char in "WELCOME TO SHANI PREMIUM TOOL":
+        # LEFT CONNECTED LINE
+        sys.stdout.write(CYAN + "│\n" + RESET)
 
-        sys.stdout.write(char)
+        # BRANCH
+        sys.stdout.write(CYAN + f"{symbol}─[" + RESET + " ")
         sys.stdout.flush()
-        time.sleep(0.07)
 
-    print("     ║\033[0m")
+        # TYPING EFFECT
+        type_text(text + " ]", color, 0.04)
 
-    time.sleep(0.2)
+        time.sleep(0.2)
 
-    print("\033[1;92m╠══════════════════════════════════════╣\033[0m")
-
-    # LINE 2
-    sys.stdout.write("\033[1;96m║  ")
-    sys.stdout.flush()
-
-    for char in "ASSALAMUALAIKUM":
-
-        sys.stdout.write(char)
+    # CURSOR EFFECT
+    while True:
+        sys.stdout.write(WHITE + "█" + RESET)
         sys.stdout.flush()
-        time.sleep(0.05)
 
-    print("                     ║\033[0m")
+        time.sleep(0.5)
 
-    time.sleep(0.3)
-
-    # LINE 3
-    sys.stdout.write("\033[1;90m║  ")
-    sys.stdout.flush()
-
-    for char in "Initializing Security Protocols...":
-
-        sys.stdout.write(char)
+        sys.stdout.write("\b \b")
         sys.stdout.flush()
-        time.sleep(0.03)
 
-    print("  ║\033[0m")
-
-    time.sleep(0.3)
-
-    # LINE 4
-    sys.stdout.write("\033[1;92m║  ")
-    sys.stdout.flush()
-
-    for char in "Loading Modules...":
-
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.03)
-
-    print("                  ║\033[0m")
-
-    time.sleep(0.3)
-
-    # LINE 5
-    sys.stdout.write("\033[1;92m║  ")
-    sys.stdout.flush()
-
-    for char in "System Ready ✓":
-
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.03)
-
-    print("                      ║\033[0m")
-
-    print("\033[1;92m╚══════════════════════════════════════╝\033[0m\n")
-
-    time.sleep(1)
+        time.sleep(0.5)
 
 
-boot()
+boot_screen()
     
 import os, sys
 import os, sys, time
