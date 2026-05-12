@@ -352,12 +352,6 @@ def ____banner____():
 
     print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
-if __name__ == "__main__":
-
-    boot_screen()
-
-    ____banner____()
-
 def creationyear(uid):
     """
     Estimates the Facebook account creation year based on the UID.
