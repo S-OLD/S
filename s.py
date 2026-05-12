@@ -145,17 +145,58 @@ def window1():
 # Set window title
 sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
 
-def ____banner____():
+# ================= IMPORTS =================
 
-    # COLORS
-    R = '\033[1;91m'
-    G = '\033[1;92m'
-    Y = '\033[1;93m'
-    B = '\033[1;94m'
-    P = '\033[1;95m'
-    C = '\033[1;96m'
-    W = '\033[1;97m'
-    X = '\033[0m'
+import os
+import sys
+import time
+
+# ================= COLORS =================
+
+R = '\033[1;91m'
+G = '\033[1;92m'
+Y = '\033[1;93m'
+B = '\033[1;94m'
+P = '\033[1;95m'
+C = '\033[1;96m'
+W = '\033[1;97m'
+X = '\033[0m'
+
+
+# ================= BOOT SCREEN =================
+
+def boot_screen():
+
+    os.system('cls' if 'win' in sys.platform else 'clear')
+
+    lines = [
+        ("┌", "Assalam O Alaikum", G),
+        ("├", "SYSTEM BOOT", W),
+        ("├", "Initializing Security Protocols...", Y),
+        ("├", "Loading Modules...", G),
+        ("└", "System Ready ✓", G),
+    ]
+
+    for symbol, text, color in lines:
+
+        sys.stdout.write(C + f"{symbol}─[" + X + " ")
+        sys.stdout.flush()
+
+        for char in text:
+            sys.stdout.write(color + char + X)
+            sys.stdout.flush()
+            time.sleep(0.03)
+
+        print(color + " ]" + X)
+
+        time.sleep(0.2)
+
+    time.sleep(1)
+
+
+# ================= BANNER =================
+
+def ____banner____():
 
     # AUTO VALUES
     global user_key, exp, left
@@ -175,7 +216,9 @@ def ____banner____():
     except:
         left = "N/A"
 
-    # ================= TOP PANEL =================
+    print()
+
+    # ===== TOP =====
 
     print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
 
@@ -193,6 +236,8 @@ def ____banner____():
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
+    # ===== INFO =====
+
     print(C + "│ " + G + "◈" + W + " OWNER     " + C + ":" + W + " SHANI MALIK".ljust(44) + C + "│")
 
     print(C + "│ " + G + "◈" + W + " WHATSAPP  " + C + ":" + G + " +923200795589".ljust(44) + C + "│")
@@ -205,9 +250,9 @@ def ____banner____():
 
     print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
-    # ================= SHANI SETUP =================
-
     print()
+
+    # ===== SHANI SETUP =====
 
     print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
 
@@ -221,6 +266,8 @@ def ____banner____():
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
+    # ===== VALUES =====
+
     print(C + "│ " + W + "DEVICE KEY : " + P + f"{user_key}".ljust(42) + C + "│")
 
     print(C + "│ " + W + "EXPIRY     : " + G + f"{exp}".ljust(42) + C + "│")
@@ -229,141 +276,16 @@ def ____banner____():
 
     print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
-if __name__ == "__main__":
-    ____banner____()
 
-import os, sys
-import os, sys, time
-RESET   = "\033[0m"
-BLACK   = "\033[1;30m"
-RED     = "\033[1;31m"
-GREEN   = "\033[1;32m"
-YELLOW  = "\033[1;33m"
-BLUE    = "\033[1;34m"
-PURPLE  = "\033[1;35m"
-CYAN    = "\033[1;36m"
-WHITE   = "\033[1;37m"
-BOLD    = "\033[1m"
-DIM     = "\033[2m"
-ITALIC  = "\033[3m"
-UNDERLINE = "\033[4m"
-BLINK   = "\033[5m"
-REVERSE = "\033[7m"
-PINK = "\033[38;5;203m"
-def ____banner____():
+# ================= START =================
 
-    import os, sys
+boot_screen()
 
-    os.system('cls' if 'win' in sys.platform else 'clear')
+____banner____()
 
-    # ===== COLORS =====
-    R = '\033[1;91m'
-    G = '\033[1;92m'
-    Y = '\033[1;93m'
-    B = '\033[1;94m'
-    P = '\033[1;95m'
-    C = '\033[1;96m'
-    W = '\033[1;97m'
-    X = '\033[0m'
+# NICHE TUMHARA PURANA PAYMENT SYSTEM AUTOMATIC CHALEGA
+# USKO TOUCH MAT KARO
 
-    # ===== YOUR VARIABLES =====
-    owner = "SHANI MALIK"
-    whatsapp = "+923200795589"
-    tool_type = "PREMIUM PAID TOOL"
-
-    # REAL VALUES
-    device_key = user_key if user_key else "LOADING..."
-    expiry = exp if exp else "N/A"
-    time_left = left if left else "N/A"
-
-    # ===== TOP HEADER =====
-
-    print(C + "┌──────────────────────────────────────────────┐" + X)
-    print(C + "│                 S H A N I                    │" + X)
-    print(C + "└──────────────────────────────────────────────┘" + X)
-
-    # ===== LOGO =====
-
-    logo = [
-        " ███████╗██╗  ██╗ █████╗ ███╗   ██╗██╗",
-        " ██╔════╝██║  ██║██╔══██╗████╗  ██║██║",
-        " ███████╗███████║███████║██╔██╗ ██║██║",
-        " ╚════██║██╔══██║██╔══██║██║╚██╗██║██║",
-        " ███████║██║  ██║██║  ██║██║ ╚████║██║",
-        " ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
-    ]
-
-    print(C + "┌──────────────────────────────────────────────┐" + X)
-
-    for line in logo:
-        print(C + "│" + G + line.center(52) + C + "│")
-
-    print(C + "├──────────────────────────────────────────────┤" + X)
-
-    # ===== TOP 3 DETAILS =====
-
-    print(C + "│ " + W + "OWNER     : " + C + owner.ljust(34) + C + "│")
-    print(C + "│ " + W + "WHATSAPP  : " + G + whatsapp.ljust(34) + C + "│")
-    print(C + "│ " + W + "TOOL TYPE : " + Y + tool_type.ljust(34) + C + "│")
-
-    print(C + "├──────────────────────────────────────────────┤" + X)
-
-    print(C + "│" + Y + " SHORTCUTS : " + W + "CTRL+C " + G + "(Pause)" + W + " | CTRL+Z " + R + "(Stop)" + " " * 5 + C + "│")
-
-    print(C + "└──────────────────────────────────────────────┘" + X)
-
-    # ===== SECOND BOX =====
-
-    print()
-
-    print(C + "┌──────────────────────────────────────────────┐" + X)
-    print(C + "│              S H A N I  -  S E T U P         │" + X)
-    print(C + "├──────────────────────────────────────────────┤" + X)
-
-    # ===== BOTTOM 3 DETAILS =====
-
-    print(C + "│ " + W + "DEVICE KEY :".ljust(17) + P + str(device_key).ljust(34) + C + "│")
-    print(C + "│ " + W + "EXPIRY     :".ljust(17) + G + str(expiry).ljust(34) + C + "│")
-    print(C + "│ " + W + "TIME LEFT  :".ljust(17) + R + str(time_left).ljust(34) + C + "│")
-
-    print(C + "└──────────────────────────────────────────────┘" + X)
-
-    # ===== PAYMENT PANEL =====
-
-    print()
-
-    print(R + "┌────────────── ACCESS DENIED ─────────────────┐" + X)
-
-    print(R + "│" + Y + " YOUR KEY IS NOT APPROVED".ljust(52) + R + "│")
-    print(R + "│" + W + " CONTACT ADMIN FOR APPROVAL".ljust(52) + R + "│")
-
-    print(R + "├──────────────────────────────────────────────┤" + X)
-
-    print(R + "│ " + W + "YOUR KEY : ".ljust(15) + Y + str(device_key).ljust(36) + R + "│")
-
-    print(R + "├──────────────────────────────────────────────┤" + X)
-
-    print(R + "│" + C + " PAYMENT METHODS ".center(52) + R + "│")
-
-    print(R + "├──────────────────────────────────────────────┤" + X)
-
-    print(R + "│ " + W + "JazzCash : " + Y + "0320-0795589".ljust(36) + R + "│")
-    print(R + "│ " + W + "EasyPaisa: " + Y + "0320-0795589".ljust(36) + R + "│")
-    print(R + "│ " + W + "SadaPay  : " + Y + "0320-0795589".ljust(36) + R + "│")
-
-    print(R + "├──────────────────────────────────────────────┤" + X)
-
-    print(R + "│" + G + " SEND PAYMENT SCREENSHOT TO ADMIN ".center(52) + R + "│")
-
-    print(R + "└──────────────────────────────────────────────┘" + X)
-
-    print()
-    print(G + "[✓] System Ready..." + X)
-
-
-if __name__ == "__main__":
-    ____banner____()
-    
 def creationyear(uid):
     """
     Estimates the Facebook account creation year based on the UID.
