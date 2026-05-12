@@ -231,7 +231,7 @@ def boot():
     sys.stdout.write("\033[1;92m║  ")
     sys.stdout.flush()
 
-    for char in "System Ready ✔":
+    for char in "System Ready ✓":
 
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -304,12 +304,12 @@ def ____banner____():
 
     print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
     print(f"{WHITE}➢ Tool Owner : {BLINK}SHANI MALIK{RESET}")
-    print(f"{BLUE}➢ WhatsApp   : {BLUE}+923200795589{RESET}")
-    print(f"{YELLOW}➢ Tool Type  : {YELLOW}PREMIUM PAID TOOL{RESET}")
-    print(f"{GREEN}➢ Version    : {GREEN}1.0{RESET}")
-    print(f"{PURPLE}➢ Device Key : {PURPLE}{user_key if user_key else 'LOADING...'}{RESET}")
-    print(f"{PINK}➢ Expiry     : {PINK}{exp if exp else 'N/A'}{RESET}")
-    print(f"{RED}➢ Time Left  : {RED}{left if left else 'N/A'}{RESET}")
+    print(f"{WHITE}➢ WhatsApp   : {BLUE}+923200795589{RESET}")
+    print(f"{WHITE}➢ Tool Type  : {YELLOW}PREMIUM PAID TOOL{RESET}")
+    print(f"{WHITE}➢ Version    : {GREEN}1.0{RESET}")
+    print(f"{WHITE}➢ Device Key : {PURPLE}{user_key if user_key else 'LOADING...'}{RESET}")
+    print(f"{WHITE}➢ Expiry     : {PINK}{exp if exp else 'N/A'}{RESET}")
+    print(f"{WHITE}➢ Time Left  : {RED}{left if left else 'N/A'}{RESET}")
     print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
 if __name__ == "__main__":
     ____banner____()
@@ -882,13 +882,13 @@ def access_denied_block(key, status, exp=None):
         "\033[1;91m╚══════════════════════════════════════╝\033[0m\n"
     )
     print(
-        "\033[1;93mYOUR KEY:\033[0m",
+        "\033[1;93mYOUR FULL KEY(COPY IT):\033[0m",
         key
     )
 
     if status == "expired":
         print(
-            "\033[1;91mYOUR KEY IS EXPIRED ✖\033[0m"
+            "\033[1;91mYOUR KEY IS EXPIRED ❌\033[0m"
         )
         print(
             "\033[1;93mEXP:\033[0m",
