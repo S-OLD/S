@@ -452,7 +452,7 @@ def old_Tow():
     print("\x1b[38;5;51m└──────────────────────────────┘\x1b[0m")
     linex()
     meth = choice = input(f"\x1b[38;5;196m➤ \x1b[1;37mCHOICE {W}:{Y} \x1b[38;5;46m➤\x1b[0m ")
-    with tred(max_workers=10) as pool:
+    with tred(max_workers=14) as pool:
         ____banner____()
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
@@ -495,7 +495,7 @@ def old_Tree():
     print("\x1b[38;5;196m└──────────────────────────────┘\x1b[0m")
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mCHOICE {W}(1/2): {Y}").strip().upper()
-    with tred(max_workers=10) as pool:
+    with tred(max_workers=14) as pool:
         ____banner____()
         print(f"\x1b[1;96m[★]➤TOTAL IDS CRACK : \x1b[1;32m{limit}\x1b[0m")
         print(f"\x1b[1;96m✈ FLIGHT MODE \x1b[1;37m➤ \x1b[1;32mON\x1b[0m / \x1b[1;31mOFF{G}\x1b[0m")
@@ -655,7 +655,7 @@ import sys
 
 from datetime import datetime
 
-APPROVED_URL = "https://raw.githubusercontent.com/shani5589/Shani/main/keys.txt"
+APPROVED_URL = "https://raw.githubusercontent.com/S-OLD/S/main/keys.txt"
 
 # ================= DEVICE KEY =================
 
