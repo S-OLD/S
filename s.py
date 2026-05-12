@@ -145,61 +145,112 @@ def window1():
 # Set window title
 sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
 
+# ===== IMPORTS =====
+
 import os
 import sys
-import time
 
-# COLORS
-GREEN = "\033[1;92m"
-CYAN = "\033[1;96m"
-WHITE = "\033[1;97m"
-GRAY = "\033[1;90m"
-RESET = "\033[0m"
+# ===== COLORS =====
 
-# TYPE EFFECT
-def type_text(text, color=WHITE, delay=0.03):
+R = '\033[1;91m'
+G = '\033[1;92m'
+Y = '\033[1;93m'
+B = '\033[1;94m'
+P = '\033[1;95m'
+C = '\033[1;96m'
+W = '\033[1;97m'
+X = '\033[0m'
 
-    sys.stdout.write(color)
+# ===== CLEAR =====
 
-    for char in text:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(delay)
+os.system('cls' if 'win' in sys.platform else 'clear')
 
-    sys.stdout.write(RESET + "\n")
+# =========================================================
+# YE VARIABLES NICHE WALI SCRIPT AUTOMATIC SET KREGI
+# YAHAN SIRF SHOW HONGI
+# =========================================================
 
+# Example:
+# user_key = generated_key
+# exp = expiry_date
+# left = remaining_time
 
-def boot_screen():
+# AGAR VALUE NA MILE TO DEFAULT SHOW HOGA
+try:
+    user_key
+except:
+    user_key = "LOADING..."
 
-    os.system("clear")
+try:
+    exp
+except:
+    exp = "N/A"
 
-    lines = [
-        ("┌", "Assalam O Alaikum", GREEN),   # START BRANCH
-        ("├", "SYSTEM BOOT", WHITE),
-        ("├", "Initializing Security Protocols...", GRAY),
-        ("├", "Loading Modules...", GREEN),
-        ("└", "System Ready ✓", GREEN),      # END BRANCH
-    ]
-
-    for symbol, text, color in lines:
-
-        sys.stdout.write(CYAN + f"{symbol}─[" + RESET + " ")
-        sys.stdout.flush()
-
-        type_text(text + " ]", color, 0.04)
-
-        time.sleep(0.2)
-
-    print(WHITE + "█" + RESET)
-
-    time.sleep(1)
-
-    print(GREEN + "\n[✓] Entering Main Menu...\n" + RESET)
-
-    # main()
+try:
+    left
+except:
+    left = "N/A"
 
 
-boot_screen()
+# ================= TOP PANEL =================
+
+print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
+
+logo = [
+" ██╗  ██╗ █████╗ ███╗   ██╗██╗",
+" ██║  ██║██╔══██╗████╗  ██║██║",
+" ███████║███████║██╔██╗ ██║██║",
+" ██╔══██║██╔══██║██║╚██╗██║██║",
+" ██║  ██║██║  ██║██║ ╚████║██║",
+" ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
+]
+
+for line in logo:
+    print(C + "│" + G + line.center(61) + C + "│")
+
+print(C + "├─────────────────────────────────────────────────────────┤" + X)
+
+# ===== INFO =====
+
+print(C + "│ " + G + "◈" + W + " OWNER     " + C + ":" + W + " SHANI MALIK".ljust(44) + C + "│")
+
+print(C + "│ " + G + "◈" + W + " WHATSAPP  " + C + ":" + G + " +923200795589".ljust(44) + C + "│")
+
+print(C + "│ " + G + "◈" + W + " TOOL TYPE " + C + ":" + Y + " PREMIUM PAID TOOL".ljust(44) + C + "│")
+
+print(C + "├─────────────────────────────────────────────────────────┤" + X)
+
+print(C + "│ " + Y + "⚡ SHORTCUTS : " + W + "CTRL+C " + G + "(Pause)" + W + " | CTRL+Z " + R + "(Stop)" + " "*13 + C + "│")
+
+print(C + "└─────────────────────────────────────────────────────────┘" + X)
+
+# ================= SHANI SETUP =================
+
+print()
+
+print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
+
+print(C + "├─────────────────────────────────────────────────────────┤" + X)
+
+# ===== OPTIONS =====
+
+print(C + "│ " + G + "<1>" + W + " DEVICE KEY".ljust(52) + C + "│")
+
+print(C + "│ " + G + "<2>" + W + " EXPIRY DATE".ljust(52) + C + "│")
+
+print(C + "│ " + G + "<3>" + W + " TIME LEFT".ljust(52) + C + "│")
+
+print(C + "├─────────────────────────────────────────────────────────┤" + X)
+
+# ===== AUTO SHOW VALUES =====
+
+print(C + "│ " + W + "DEVICE KEY : " + P + f"{user_key}".ljust(42) + C + "│")
+
+print(C + "│ " + W + "EXPIRY     : " + G + f"{exp}".ljust(42) + C + "│")
+
+print(C + "│ " + W + "TIME LEFT  : " + R + f"{left}".ljust(42) + C + "│")
+
+print(C + "└─────────────────────────────────────────────────────────┘" + X)
     
 import os, sys
 import os, sys, time
