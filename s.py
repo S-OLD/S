@@ -149,21 +149,28 @@ sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
 
 def boot_screen():
 
+    import os, sys, time
+
     os.system('cls' if 'win' in sys.platform else 'clear')
+
+    # ===== COLORS =====
 
     C = '\033[1;96m'
     G = '\033[1;92m'
     Y = '\033[1;93m'
     W = '\033[1;97m'
+    GRAY = '\033[1;90m'
     X = '\033[0m'
 
-    # ===== CUSTOM DELAYS =====
+    # ===== CUSTOM SPEEDS =====
 
     delay_1 = 0.05   # Assalam O Alaikum
     delay_2 = 0.04   # SYSTEM BOOT
-    delay_3 = 0.02   # Security
-    delay_4 = 0.02   # Loading
+    delay_3 = 0.02   # Security Protocols
+    delay_4 = 0.02   # Loading Modules
     delay_5 = 0.03   # Ready
+
+    # ===== BOOT LINES =====
 
     boot_lines = [
 
@@ -171,19 +178,23 @@ def boot_screen():
 
         ("├", "SYSTEM BOOT", W, delay_2),
 
-        ("├", "Initializing Security Protocols...", Y, delay_3),
+        ("├", "Initializing Security Protocols...", GRAY, delay_3),
 
-        ("├", "Loading Modules...", G, delay_4),
+        ("├", "Loading Modules...", Y, delay_4),
 
         ("└", "System Ready ✓", G, delay_5)
 
     ]
 
+    # ===== PRINT SYSTEM =====
+
     for symbol, text, color, delay in boot_lines:
 
+        # START BRACKET
         sys.stdout.write(C + f"{symbol}─[" + X + " ")
         sys.stdout.flush()
 
+        # TEXT EFFECT
         for char in text:
 
             sys.stdout.write(color + char + X)
@@ -191,12 +202,18 @@ def boot_screen():
 
             time.sleep(delay)
 
-        print(color + " ]" + X)
+        # END BRACKET SAME COLOR AS START
+        sys.stdout.write(C + " ]" + X + "\n")
+        sys.stdout.flush()
 
-        time.sleep(0.2)
+        time.sleep(0.15)
 
-os.system('cls' if 'win' in sys.platform else 'clear')
+    # ===== AUTO CLEAR FOR NEW PAGE =====
 
+    time.sleep(0.3)
+
+    os.system('cls' if 'win' in sys.platform else 'clear')
+    
 # ================= MAIN BANNER =================
 
 def ____banner____():
