@@ -210,8 +210,6 @@ def boot_screen():
 
     # ===== AUTO CLEAR FOR NEW PAGE =====
 
-    time.sleep(0.3)
-
     os.system('cls' if 'win' in sys.platform else 'clear')
     
 # ================= MAIN BANNER =================
