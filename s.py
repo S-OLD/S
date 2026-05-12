@@ -191,10 +191,14 @@ def boot_screen():
 
         time.sleep(0.2)
 
-    time.sleep(1)
+    # BOOT SCREEN THODI DER DIKHEGI
+    time.sleep(1.5)
+
+    # PURA SCREEN CLEAR HOGA
+    os.system('cls' if 'win' in sys.platform else 'clear')
 
 
-# ================= BANNER =================
+# ================= MAIN BANNER =================
 
 def ____banner____():
 
@@ -216,19 +220,17 @@ def ____banner____():
     except:
         left = "N/A"
 
-    print()
-
-    # ===== TOP =====
+    # ================= TOP PANEL =================
 
     print(C + "┌─────────────────────── S H A N I ───────────────────────┐" + X)
 
     logo = [
-    " ██╗  ██╗ █████╗ ███╗   ██╗██╗",
-    " ██║  ██║██╔══██╗████╗  ██║██║",
-    " ███████║███████║██╔██╗ ██║██║",
-    " ██╔══██║██╔══██║██║╚██╗██║██║",
-    " ██║  ██║██║  ██║██║ ╚████║██║",
-    " ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
+    "███████╗██╗  ██╗ █████╗ ███╗   ██╗██╗",
+    "██╔════╝██║  ██║██╔══██╗████╗  ██║██║",
+    "███████╗███████║███████║██╔██╗ ██║██║",
+    "╚════██║██╔══██║██╔══██║██║╚██╗██║██║",
+    "███████║██║  ██║██║  ██║██║ ╚████║██║",
+    "╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
     ]
 
     for line in logo:
@@ -236,13 +238,19 @@ def ____banner____():
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-    # ===== INFO =====
+    # ===== 6 DETAILS =====
 
-    print(C + "│ " + G + "◈" + W + " OWNER     " + C + ":" + W + " SHANI MALIK".ljust(44) + C + "│")
+    print(C + "│ " + G + "◈" + W + " OWNER       " + C + ":" + W + " SHANI MALIK".ljust(40) + C + "│")
 
-    print(C + "│ " + G + "◈" + W + " WHATSAPP  " + C + ":" + G + " +923200795589".ljust(44) + C + "│")
+    print(C + "│ " + G + "◈" + W + " WHATSAPP    " + C + ":" + G + " +923200795589".ljust(40) + C + "│")
 
-    print(C + "│ " + G + "◈" + W + " TOOL TYPE " + C + ":" + Y + " PREMIUM PAID TOOL".ljust(44) + C + "│")
+    print(C + "│ " + G + "◈" + W + " TOOL TYPE   " + C + ":" + Y + " PREMIUM PAID TOOL".ljust(40) + C + "│")
+
+    print(C + "│ " + G + "◈" + W + " DEVICE KEY  " + C + ":" + P + f" {user_key}".ljust(40) + C + "│")
+
+    print(C + "│ " + G + "◈" + W + " EXPIRY DATE " + C + ":" + G + f" {exp}".ljust(40) + C + "│")
+
+    print(C + "│ " + G + "◈" + W + " TIME LEFT   " + C + ":" + R + f" {left}".ljust(40) + C + "│")
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
@@ -252,27 +260,21 @@ def ____banner____():
 
     print()
 
-    # ===== SHANI SETUP =====
+    # ================= OPTIONS PANEL =================
 
     print(C + "┌──────────────────── SHANI - SETUP ─────────────────────┐" + X)
 
     print(C + "├─────────────────────────────────────────────────────────┤" + X)
 
-    print(C + "│ " + G + "<1>" + W + " DEVICE KEY".ljust(52) + C + "│")
+    # YE OPTIONS BAAD ME TUMHARE REAL OPTIONS SE REPLACE HONGE
 
-    print(C + "│ " + G + "<2>" + W + " EXPIRY DATE".ljust(52) + C + "│")
+    print(C + "│ " + G + "<1>" + W + " OPTION ONE".ljust(52) + C + "│")
 
-    print(C + "│ " + G + "<3>" + W + " TIME LEFT".ljust(52) + C + "│")
+    print(C + "│ " + G + "<2>" + W + " OPTION TWO".ljust(52) + C + "│")
 
-    print(C + "├─────────────────────────────────────────────────────────┤" + X)
+    print(C + "│ " + G + "<3>" + W + " OPTION THREE".ljust(52) + C + "│")
 
-    # ===== VALUES =====
-
-    print(C + "│ " + W + "DEVICE KEY : " + P + f"{user_key}".ljust(42) + C + "│")
-
-    print(C + "│ " + W + "EXPIRY     : " + G + f"{exp}".ljust(42) + C + "│")
-
-    print(C + "│ " + W + "TIME LEFT  : " + R + f"{left}".ljust(42) + C + "│")
+    print(C + "│ " + G + "<4>" + W + " OPTION FOUR".ljust(52) + C + "│")
 
     print(C + "└─────────────────────────────────────────────────────────┘" + X)
 
@@ -283,8 +285,7 @@ boot_screen()
 
 ____banner____()
 
-# NICHE TUMHARA PURANA PAYMENT SYSTEM AUTOMATIC CHALEGA
-# USKO TOUCH MAT KARO
+# NICHE TUMHARA APPROVAL / PAYMENT SYSTEM CHALEGA
 
 def creationyear(uid):
     """
