@@ -158,6 +158,7 @@ RESET = "\033[0m"
 
 # TYPE EFFECT
 def type_text(text, color=WHITE, delay=0.03):
+
     sys.stdout.write(color)
 
     for char in text:
@@ -169,42 +170,33 @@ def type_text(text, color=WHITE, delay=0.03):
 
 
 def boot_screen():
+
     os.system("clear")
 
-    # CONNECTED BRANCH DESIGN
-    boot_lines = [
-        ("┌", "Assalam O Alaikum", GREEN),
+    lines = [
+        ("┌", "Assalam O Alaikum", GREEN),   # START BRANCH
         ("├", "SYSTEM BOOT", WHITE),
         ("├", "Initializing Security Protocols...", GRAY),
         ("├", "Loading Modules...", GREEN),
-        ("└", "System Ready ✓", GREEN),
+        ("└", "System Ready ✓", GREEN),      # END BRANCH
     ]
 
-    for symbol, text, color in boot_lines:
+    for symbol, text, color in lines:
 
-        # LEFT CONNECTED LINE
-        sys.stdout.write(CYAN + "│\n" + RESET)
-
-        # BRANCH
         sys.stdout.write(CYAN + f"{symbol}─[" + RESET + " ")
         sys.stdout.flush()
 
-        # TYPING EFFECT
         type_text(text + " ]", color, 0.04)
 
         time.sleep(0.2)
 
-    # CURSOR EFFECT
-    while True:
-        sys.stdout.write(WHITE + "█" + RESET)
-        sys.stdout.flush()
+    print(WHITE + "█" + RESET)
 
-        time.sleep(0.5)
+    time.sleep(1)
 
-        sys.stdout.write("\b \b")
-        sys.stdout.flush()
+    print(GREEN + "\n[✓] Entering Main Menu...\n" + RESET)
 
-        time.sleep(0.5)
+    # main()
 
 
 boot_screen()
