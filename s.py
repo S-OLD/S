@@ -220,52 +220,116 @@ BLINK   = "\033[5m"
 REVERSE = "\033[7m"
 PINK = "\033[38;5;203m"
 def ____banner____():
+
     import os, sys
+
     os.system('cls' if 'win' in sys.platform else 'clear')
 
-    width = 50
+    # ===== COLORS =====
+    R = '\033[1;91m'
+    G = '\033[1;92m'
+    Y = '\033[1;93m'
+    B = '\033[1;94m'
+    P = '\033[1;95m'
+    C = '\033[1;96m'
+    W = '\033[1;97m'
+    X = '\033[0m'
 
-    # TOP BORDER
-    print(CYAN + "╔" + "═"*width + "╗" + RESET)
-    
-    # TITLE
-    print(CYAN + "╔" + "═"*width + "╗" + RESET)
+    # ===== YOUR VARIABLES =====
+    owner = "SHANI MALIK"
+    whatsapp = "+923200795589"
+    tool_type = "PREMIUM PAID TOOL"
 
-    # TITLE
-    print(CYAN + "║" + "B R A N D".center(width) + "║")
-    print(CYAN + "║" + " "*width + "║")
-    
-    # LOGO
+    # REAL VALUES
+    device_key = user_key if user_key else "LOADING..."
+    expiry = exp if exp else "N/A"
+    time_left = left if left else "N/A"
+
+    # ===== TOP HEADER =====
+
+    print(C + "┌──────────────────────────────────────────────┐" + X)
+    print(C + "│                 S H A N I                    │" + X)
+    print(C + "└──────────────────────────────────────────────┘" + X)
+
+    # ===== LOGO =====
+
     logo = [
-    "███████╗██╗  ██╗ █████╗ ███╗   ██╗██╗",
-    "██╔════╝██║  ██║██╔══██╗████╗  ██║██║",
-    "███████╗███████║███████║██╔██╗ ██║██║",
-    "╚════██║██╔══██║██╔══██║██║╚██╗██║██║",
-    "███████║██║  ██║██║  ██║██║ ╚████║██║",
-    "╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
+        " ███████╗██╗  ██╗ █████╗ ███╗   ██╗██╗",
+        " ██╔════╝██║  ██║██╔══██╗████╗  ██║██║",
+        " ███████╗███████║███████║██╔██╗ ██║██║",
+        " ╚════██║██╔══██║██╔══██║██║╚██╗██║██║",
+        " ███████║██║  ██║██║  ██║██║ ╚████║██║",
+        " ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝"
     ]
-    
+
+    print(C + "┌──────────────────────────────────────────────┐" + X)
+
     for line in logo:
-        print(CYAN + "║" + line.center(width) + "║")
+        print(C + "│" + G + line.center(52) + C + "│")
 
-    print(CYAN + "║" + " "*width + "║")
-    print(RED + "║" + "I'm a gangster without a Gang💀".center(49) + "║" + RESET)
-    print(CYAN + "╚" + "═"*width + "╝" + RESET)
+    print(C + "├──────────────────────────────────────────────┤" + X)
 
-    # 🔥 INFO PANEL (FIXED HERE)
-    print(PINK + "╔══════════════════════════════════╗" + RESET)
-    print("║     ✦ TOOL INFO PANEL ✦          ║")
-    print(PINK + "╚══════════════════════════════════╝" + RESET)
+    # ===== TOP 3 DETAILS =====
 
-    print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
-    print(f"{WHITE}➢ Tool Owner : {WHITE}SHANI MALIK{RESET}")
-    print(f"{WHITE}➢ WhatsApp   : {WHITE}+923200795589{RESET}")
-    print(f"{WHITE}➢ Tool Type  : {WHITE}PREMIUM PAID TOOL{RESET}")
-    print(f"{WHITE}➢ Version    : {GREEN}2.0{RESET}")
-    print(f"{WHITE}➢ Device Key : {PURPLE}{user_key if user_key else 'LOADING...'}{RESET}")
-    print(f"{WHITE}➢ Expiry     : {PINK}{exp if exp else 'N/A'}{RESET}")
-    print(f"{WHITE}➢ Time Left  : {RED}{left if left else 'N/A'}{RESET}")
-    print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
+    print(C + "│ " + W + "OWNER     : " + C + owner.ljust(34) + C + "│")
+    print(C + "│ " + W + "WHATSAPP  : " + G + whatsapp.ljust(34) + C + "│")
+    print(C + "│ " + W + "TOOL TYPE : " + Y + tool_type.ljust(34) + C + "│")
+
+    print(C + "├──────────────────────────────────────────────┤" + X)
+
+    print(C + "│" + Y + " SHORTCUTS : " + W + "CTRL+C " + G + "(Pause)" + W + " | CTRL+Z " + R + "(Stop)" + " " * 5 + C + "│")
+
+    print(C + "└──────────────────────────────────────────────┘" + X)
+
+    # ===== SECOND BOX =====
+
+    print()
+
+    print(C + "┌──────────────────────────────────────────────┐" + X)
+    print(C + "│              S H A N I  -  S E T U P         │" + X)
+    print(C + "├──────────────────────────────────────────────┤" + X)
+
+    # ===== BOTTOM 3 DETAILS =====
+
+    print(C + "│ " + W + "DEVICE KEY :".ljust(17) + P + str(device_key).ljust(34) + C + "│")
+    print(C + "│ " + W + "EXPIRY     :".ljust(17) + G + str(expiry).ljust(34) + C + "│")
+    print(C + "│ " + W + "TIME LEFT  :".ljust(17) + R + str(time_left).ljust(34) + C + "│")
+
+    print(C + "└──────────────────────────────────────────────┘" + X)
+
+    # ===== PAYMENT PANEL =====
+
+    print()
+
+    print(R + "┌────────────── ACCESS DENIED ─────────────────┐" + X)
+
+    print(R + "│" + Y + " YOUR KEY IS NOT APPROVED".ljust(52) + R + "│")
+    print(R + "│" + W + " CONTACT ADMIN FOR APPROVAL".ljust(52) + R + "│")
+
+    print(R + "├──────────────────────────────────────────────┤" + X)
+
+    print(R + "│ " + W + "YOUR KEY : ".ljust(15) + Y + str(device_key).ljust(36) + R + "│")
+
+    print(R + "├──────────────────────────────────────────────┤" + X)
+
+    print(R + "│" + C + " PAYMENT METHODS ".center(52) + R + "│")
+
+    print(R + "├──────────────────────────────────────────────┤" + X)
+
+    print(R + "│ " + W + "JazzCash : " + Y + "0320-0795589".ljust(36) + R + "│")
+    print(R + "│ " + W + "EasyPaisa: " + Y + "0320-0795589".ljust(36) + R + "│")
+    print(R + "│ " + W + "SadaPay  : " + Y + "0320-0795589".ljust(36) + R + "│")
+
+    print(R + "├──────────────────────────────────────────────┤" + X)
+
+    print(R + "│" + G + " SEND PAYMENT SCREENSHOT TO ADMIN ".center(52) + R + "│")
+
+    print(R + "└──────────────────────────────────────────────┘" + X)
+
+    print()
+    print(G + "[✓] System Ready..." + X)
+
+
 if __name__ == "__main__":
     ____banner____()
     
