@@ -207,7 +207,7 @@ def ____banner____():
 
     # TOP BORDER
     print(CYAN + "╔" + "═"*width + "╗" + RESET)
-
+    print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
     # TITLE
     print(CYAN + "╔" + "═"*width + "╗" + RESET)
 
@@ -237,7 +237,7 @@ def ____banner____():
     print("║     ✦ TOOL INFO PANEL ✦          ║")
     print(PINK + "╚══════════════════════════════════╝" + RESET)
 
-    print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
+    print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
     print(f"{WHITE}➢ Tool Owner : {BLINK}SHANI MALIK{RESET}")
     print(f"{BLUE}➢ WhatsApp   : {BLUE}+923200795589{RESET}")
     print(f"{YELLOW}➢ Tool Type  : {YELLOW}PREMIUM PAID TOOL{RESET}")
@@ -245,7 +245,7 @@ def ____banner____():
     print(f"{PURPLE}➢ Device Key : {PURPLE}{user_key if user_key else 'LOADING...'}{RESET}")
     print(f"{PINK}➢ Expiry     : {PINK}{exp if exp else 'N/A'}{RESET}")
     print(f"{RED}➢ Time Left  : {RED}{left if left else 'N/A'}{RESET}")
-    print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
+    print(GREEN + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + RESET)
 if __name__ == "__main__":
     ____banner____()
     
@@ -840,7 +840,7 @@ def access_denied_block(key, status, exp=None):
             "\033[1;91mYOUR KEY IS NOT APPROVED ❌\033[0m"
         )
         print(
-            "\033[1;97mSEND PAYMENT, TAKE SCREENSHOT AND GET APPROVAL\033[0m"
+            "\033[1;97m1.SEND PAYMENT • 2.TAKE SCREENSHOT • 3.GET APPROVAL\033[0m"
         )
 
 # ================= PAYMENT BOX =================
