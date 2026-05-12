@@ -214,7 +214,12 @@ def boot_screen():
     os.system('clear')
     
 # ================= MAIN BANNER =================
-
+import sys
+def menu_clear():
+    # Banner + Main menu ko chor kar baqi clear karega
+    sys.stdout.write("\033[15;0H")
+    sys.stdout.write("\033[J")
+    sys.stdout.flush()
 def ____banner____():
 
     # ===== COLORS =====
@@ -476,7 +481,7 @@ def old_clone():
     else:
         print(f"\n[×]{rad} Choose Value Option... ")
         BNG_71_()
-        clear()
+        menu_clear()
 
 def old_One():
     """
@@ -495,12 +500,12 @@ def old_One():
     print("\x1b[1;95m╚══════════════════════════════════╝\x1b[0m\n")
     ask = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     linex()
-    clear()
+    menu_clear()
     print(f"\x1b[38;5;51m╭─[★]─➤ EXAMPLE {Y}:{G} 20000 • 30000 • 99999\x1b[0m")
     print(f"\x1b[38;5;51m╰───────────────────────────────\x1b[0m")
     limit = choice = input(f"\x1b[38;5;196m────────────────────────────────➤ \x1b[1;37m(★)\x1b[38;5;196m>× \x1b[38;5;46mCHOICE {W} : {Y} \x1b[38;5;196m➤\x1b[0m ")
     linex()
-    clear()
+    menu_clear()
     star = '10000'
     for _ in range(int(limit)):
         data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
@@ -514,7 +519,7 @@ def old_One():
     print("\x1b[38;5;196m└──────────────────────────────┘\x1b[0m")
     linex()
     meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
-    clear()
+    menu_clear()
     with tred(max_workers=10) as pool:
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
@@ -549,10 +554,12 @@ def old_Tow():
     print("\x1b[1;95m╚══════════════════════════════════╝\x1b[0m\n")
     ask = choice = input(f"\x1b[38;5;196m[SELECT]\x1b[38;5;46m {Y}:{G} \x1b[38;5;196m➤\x1b[0m ")
     linex()
+    menu_clear()
     print(f"\x1b[38;5;51m╭─[★]─➤ EXAMPLE {Y}:{G} 20000 • 30000 • 99999\x1b[0m")
     print(f"\x1b[38;5;51m╰───────────────────────────────\x1b[0m")
     limit =  choice = input(f"\x1b[38;5;196m[SELECT]\x1b[38;5;46m {Y}:{G} \x1b[38;5;196m➤\x1b[0m ")
     linex()
+    menu_clear()
     prefixes = ['100004', '100004']
     for _ in range(int(limit)):
         prefix = random.choice(prefixes)
@@ -568,6 +575,7 @@ def old_Tow():
     print("\x1b[38;5;51m└──────────────────────────────┘\x1b[0m")
     linex()
     meth = choice = input(f"\x1b[38;5;196m➤ \x1b[1;37mCHOICE {W}:{Y} \x1b[38;5;46m➤\x1b[0m ")
+    menu_clear()
     with tred(max_workers=10) as pool:
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
@@ -590,10 +598,12 @@ def old_Tree():
     print(f"\x1b[38;5;196m➤ \x1b[1;37mOLD CODE\x1b[0m \x1b[38;5;46m{Y}:{G}\x1b[0m \x1b[38;5;244m2009-2013\x1b[0m")
     ask = input(f"\x1b[38;5;196m➤\x1b[1;37m SELECT \x1b[0m\x1b[38;5;46m{Y}:{G}\x1b[0m ")
     linex()
+    menu_clear()
     print(f"\x1b[38;5;196m╭─[\x1b[1;37m★\x1b[38;5;196m]─➤\x1b[38;5;46m EXAMPLE {Y}:{G} \x1b[38;5;226m20000 \x1b[1;37m•\x1b[38;5;226m 30000 \x1b[1;37m•\x1b[38;5;226m 99999\x1b[0m")
     print(f"\x1b[38;5;196m╰───────────────────────────────\x1b[0m")
     limit = input(f"\x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mTOTAL ID COUNT {Y}:{G} ")
     linex()
+    menu_clear()
     prefix = '1000004'
     for _ in range(int(limit)):
         suffix = ''.join(random.choices('0123456789', k=8))
@@ -608,6 +618,7 @@ def old_Tree():
     print("\x1b[38;5;196m└──────────────────────────────┘\x1b[0m")
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mCHOICE {W}(1/2): {Y}").strip().upper()
+    menu_clear()
     with tred(max_workers=10) as pool:
         print(f"\x1b[1;96m[★]➤TOTAL IDS CRACK : \x1b[1;32m{limit}\x1b[0m")
         print(f"\x1b[1;96m✈ FLIGHT MODE \x1b[1;37m➤ \x1b[1;32mON\x1b[0m / \x1b[1;31mOFF{G}\x1b[0m")
