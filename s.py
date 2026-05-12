@@ -195,9 +195,7 @@ def boot_screen():
 
         time.sleep(0.2)
 
-    # ===== SCREEN HOLD =====
-
-    time.sleep(1.5)
+os.system('cls' if 'win' in sys.platform else 'clear')
 
 # ================= MAIN BANNER =================
 
