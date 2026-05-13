@@ -215,7 +215,6 @@ def boot_screen():
     
 # ================= MAIN BANNER =================
 import sys
-def menu_clear():
     # Banner + Main menu ko chor kar baqi clear karega
     sys.stdout.write("\033[15;0H")
     sys.stdout.write("\033[J")
@@ -474,14 +473,16 @@ def old_clone():
     _input = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     if _input in ('1', 'a', '01', '1'):
         old_One()
+        menu_clear()
     elif _input in ('2', 'b', '02', '2'):
         old_Tow()
+        menu_clear()
     elif _input in ('3', 'c', '03', '3'):
         old_Tree()
+        menu_clear()
     else:
         print(f"\n[×]{rad} Choose Value Option... ")
         BNG_71_()
-        menu_clear()
 
 def old_One():
     """
