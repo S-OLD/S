@@ -504,7 +504,6 @@ def old_One():
     sys.stdout.write("\033[19;0H")
     sys.stdout.write("\033[J")
     sys.stdout.flush()
-
     linex()
     print("\x1b[38;5;226m┌───────────────── LIMIT MENU ─────────────────┐\x1b[0m")
     print("\x1b[38;5;226m│ EXAMPLE : 20000 • 30000 • 99999".ljust(56) + "│\x1b[0m")
@@ -514,8 +513,8 @@ def old_One():
     linex()
     star = '10000'
     for _ in range(int(limit)):
-    data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
-    user.append(data)
+        data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
+        user.append(data)
     print("\x1b[38;5;46m┌───────────────── SELECT METHOD ───────────────┐\x1b[0m")
     print("\x1b[38;5;46m│ [1] METHOD 1".ljust(56) + "│\x1b[0m")
     print("\x1b[38;5;46m│ [2] METHOD 2".ljust(56) + "│\x1b[0m")
