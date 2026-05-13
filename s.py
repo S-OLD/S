@@ -460,7 +460,7 @@ def BNG_71_():
             continue
 
 def menu_clear():
-    sys.stdout.write("\033[20;0H")
+    sys.stdout.write("\033[35;0H")
     sys.stdout.write("\033[J")
     sys.stdout.flush()
 def old_clone():
