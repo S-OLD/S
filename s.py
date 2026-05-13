@@ -513,7 +513,7 @@ def old_One():
     menu_clear()
     linex()
     star = '10000'
-for _ in range(int(limit)):
+    for _ in range(int(limit)):
     data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
     user.append(data)
     print("\x1b[38;5;46m┌───────────────── SELECT METHOD ───────────────┐\x1b[0m")
