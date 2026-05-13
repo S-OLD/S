@@ -459,11 +459,8 @@ def BNG_71_():
 
             continue
 
-import sys
-
 def menu_clear():
-    # SHANI header fixed rahega
-    sys.stdout.write("\033[22;0H")
+    sys.stdout.write("\033[20;0H")
     sys.stdout.write("\033[J")
     sys.stdout.flush()
 def old_clone():
