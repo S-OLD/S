@@ -460,7 +460,7 @@ def BNG_71_():
             continue
 
 def menu_clear():
-    print("\n" * 40)
+    print("\033[1A\033[2K" * 20, end="")
 def old_clone():
     """
     Menu for selecting old account cloning type.
