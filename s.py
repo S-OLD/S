@@ -505,24 +505,25 @@ def old_One():
     print("\x1b[1;93m║  ★ PREMIUM TOOL INTERFACE ★      ║\x1b[0m")
     print("\x1b[1;95m╚══════════════════════════════════╝\x1b[0m\n")
     ask = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
+    menu_clear()
     linex()
-    print(f"\x1b[38;5;51m╭─[★]─➤ EXAMPLE {Y}:{G} 20000 • 30000 • 99999\x1b[0m")
-    print(f"\x1b[38;5;51m╰───────────────────────────────\x1b[0m")
+    print("\x1b[38;5;226m┌───────────────── LIMIT MENU ─────────────────┐\x1b[0m")
+    print("\x1b[38;5;226m│ EXAMPLE : 20000 • 30000 • 99999".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;226m└──────────────────────────────────────────────┘\x1b[0m")
     limit = choice = input(f"\x1b[38;5;196m────────────────────────────────➤ \x1b[1;37m(★)\x1b[38;5;196m>× \x1b[38;5;46mCHOICE {W} : {Y} \x1b[38;5;196m➤\x1b[0m ")
+    menu_clear()
     linex()
     star = '10000'
     for _ in range(int(limit)):
         data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
         user.append(data)
-    print("\x1b[38;5;82m┌── [ 1 ] ─────────────────────┐\x1b[0m")
-    print("\x1b[38;5;82m│ METHOD 1                     │\x1b[0m")
-    print("\x1b[38;5;82m└──────────────────────────────┘\x1b[0m")
-
-    print("\x1b[38;5;196m┌── [ 2 ] ─────────────────────┐\x1b[0m")
-    print("\x1b[38;5;196m│ METHOD 2                     │\x1b[0m")
-    print("\x1b[38;5;196m└──────────────────────────────┘\x1b[0m")
+    print("\x1b[38;5;46m┌───────────────── SELECT METHOD ───────────────┐\x1b[0m")
+    print("\x1b[38;5;46m│ [1] METHOD 1".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;46m│ [2] METHOD 2".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;46m└──────────────────────────────────────────────┘\x1b[0m")
     linex()
     meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
+    menu_clear()
     with tred(max_workers=10) as pool:
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
@@ -544,15 +545,13 @@ def old_Tow():
     Cloning method for accounts with specific prefixes.
     """
     user = []
-    print("\x1b[1;96m────────────────────────────────────\x1b[0m")
-    print("\x1b[1;96m➤ Select Series:\x1b[0m\n")
-
-    print("\x1b[1;97m[\x1b[1;92m1\x1b[1;97m]\x1b[0m \x1b[1;96m100000\x1b[0m")
-    print("\x1b[1;97m[\x1b[1;92m2\x1b[1;97m]\x1b[0m \x1b[1;96m100001\x1b[0m")
-    print("\x1b[1;97m[\x1b[1;92m3\x1b[1;97m]\x1b[0m \x1b[1;96m100002\x1b[0m")
-    print("\x1b[1;97m[\x1b[1;92m4\x1b[1;97m]\x1b[0m \x1b[1;96m100003\x1b[0m")
-    print("\x1b[1;97m[\x1b[1;92m5\x1b[1;97m]\x1b[0m \x1b[1;96m100004\x1b[0m\n")
-
+    print("\x1b[38;5;51m┌──────────────── SELECT SERIES ────────────────┐\x1b[0m")
+    print("\x1b[38;5;51m│ [1] 100000".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;51m│ [2] 100001".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;51m│ [3] 100002".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;51m│ [4] 100003".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;51m│ [5] 100004".ljust(56) + "│\x1b[0m")
+    print("\x1b[38;5;51m└───────────────────────────────────────────────┘\x1b[0m")
     print("\x1b[1;95m╔══════════════════════════════════╗\x1b[0m")
     print("\x1b[1;93m║  ★ PREMIUM TOOL INTERFACE ★      ║\x1b[0m")
     print("\x1b[1;95m╚══════════════════════════════════╝\x1b[0m\n")
