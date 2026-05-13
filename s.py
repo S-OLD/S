@@ -459,11 +459,8 @@ def BNG_71_():
 
             continue
 
-import os
-
 def menu_clear():
-    os.system("clear")  # Linux/Termux
-    # os.system("cls")  # Windows
+    print("\n" * 40)
 def old_clone():
     """
     Menu for selecting old account cloning type.
@@ -488,9 +485,9 @@ def old_clone():
         old_Tree()
     else:
         print(f"\n[×]{rad} Choose Value Option... ")
-        menu_clear()
-        BNG_71_()
-
+        time.sleep(1)
+        old_clone()
+    
 def old_One():
     """
     Cloning method for accounts from 2010-2014.
