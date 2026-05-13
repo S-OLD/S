@@ -459,6 +459,11 @@ def BNG_71_():
 
             continue
 
+import os
+
+def menu_clear():
+    os.system("clear")  # Linux/Termux
+    # os.system("cls")  # Windows
 def old_clone():
     """
     Menu for selecting old account cloning type.
@@ -473,16 +478,17 @@ def old_clone():
     print("\x1b[38;5;201m╚══════════════════════════════════╝\x1b[0m")
     _input = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     if _input in ('1', 'a', '01', '1'):
+        menu_clear()
         old_One()
-        menu_clear()
     elif _input in ('2', 'b', '02', '2'):
+        menu_clear()
         old_Tow()
-        menu_clear()
     elif _input in ('3', 'c', '03', '3'):
-        old_Tree()
         menu_clear()
+        old_Tree()
     else:
         print(f"\n[×]{rad} Choose Value Option... ")
+        menu_clear()
         BNG_71_()
 
 def old_One():
