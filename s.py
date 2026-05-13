@@ -514,29 +514,29 @@ def old_One():
     linex()
     star = '10000'
     for _ in range(int(limit)):
-    data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
-    user.append(data)
-    print("\x1b[38;5;46m┌───────────────── SELECT METHOD ───────────────┐\x1b[0m")
-    print("\x1b[38;5;46m│ [1] METHOD 1".ljust(56) + "│\x1b[0m")
-    print("\x1b[38;5;46m│ [2] METHOD 2".ljust(56) + "│\x1b[0m")
-    print("\x1b[38;5;46m└──────────────────────────────────────────────┘\x1b[0m")
-    linex()
-    meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
-    menu_clear()
-    with tred(max_workers=10) as pool:
-        print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
-        print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
-        print(f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m")
+        data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
+        user.append(data)
+        print("\x1b[38;5;46m┌───────────────── SELECT METHOD ───────────────┐\x1b[0m")
+        print("\x1b[38;5;46m│ [1] METHOD 1".ljust(56) + "│\x1b[0m")
+        print("\x1b[38;5;46m│ [2] METHOD 2".ljust(56) + "│\x1b[0m")
+        print("\x1b[38;5;46m└──────────────────────────────────────────────┘\x1b[0m")
         linex()
-        for mal in user:
-            uid = star + mal
-            if meth == '1':
-                pool.submit(login_1, uid)
-            elif meth == '2':
-                pool.submit(login_2, uid)
-            else:
-                print(f"    {rad}[!] INVshaniD METHOD SELECTED")
-                break
+        meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
+        menu_clear()
+        with tred(max_workers=10) as pool:
+            print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
+            print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
+            print(f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m")
+            linex()
+            for mal in user:
+                uid = star + mal
+                if meth == '1':
+                    pool.submit(login_1, uid)
+                elif meth == '2':
+                    pool.submit(login_2, uid)
+                else:
+                    print(f"    {rad}[!] INVshaniD METHOD SELECTED")
+                    break
 
 def old_Tow():
     menu_clear()
