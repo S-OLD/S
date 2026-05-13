@@ -501,7 +501,7 @@ def old_One():
     print("\x1b[38;5;51m└───────────────────────────────────────────────┘\x1b[0m")
     ask = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     # SELECT SERIES BLOCK CLEAR
-    sys.stdout.write("\033[20;0H")
+    sys.stdout.write("\033[19;0H")
     sys.stdout.write("\033[J")
     sys.stdout.flush()
 
