@@ -561,7 +561,7 @@ def old_Tow():
     print(f"\x1b[38;5;51m╭─[★]─➤ EXAMPLE {Y}:{G} 20000 • 30000 • 99999\x1b[0m")
     print(f"\x1b[38;5;51m╰───────────────────────────────\x1b[0m")
     limit =  choice = input(f"\x1b[38;5;196m[SELECT]\x1b[38;5;46m {Y}:{G} \x1b[38;5;196m➤\x1b[0m ")
-menu_clear()
+    menu_clear()
     linex()
     prefixes = ['100004', '100004']
     for _ in range(int(limit)):
@@ -575,7 +575,7 @@ menu_clear()
     print("\x1b[38;5;46m└──────────────────────────────────────────────┘\x1b[0m")
     linex()
     meth = choice = input(f"\x1b[38;5;196m➤ \x1b[1;37mCHOICE {W}:{Y} \x1b[38;5;46m➤\x1b[0m ")
-menu_clear()
+    menu_clear()
     with tred(max_workers=10) as pool:
         print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
         print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
