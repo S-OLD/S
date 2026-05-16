@@ -506,7 +506,7 @@ def old_One():
     print("\x1b[38;5;51m└─────────────────────────────────────────────────────────┘\x1b[0m")
     ask = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     # SELECT SERIES BLOCK CLEAR
-    sys.stdout.write("\033[21;0H")
+    sys.stdout.write("\033[19;0H")
     sys.stdout.write("\033[J")
     sys.stdout.flush()
     print("\x1b[38;5;226m├───────────────────── LIMIT MENU ────────────────────────┤\x1b[0m")
@@ -525,9 +525,9 @@ def old_One():
     meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     menu_clear()
     with tred(max_workers=10) as pool:
-        print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m")
-        print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m")
-        print(f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m")
+        print(f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m") .ljust(68) + "│\x1b[0m")
+        print(f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m") .ljust(68) + "│\x1b[0m")
+        print(f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m").ljust(68) + "│\x1b[0m")
         print("\x1b[38;5;46m──────────────────────────────────────────────────────────┘\x1b[0m")
         for mal in user:
             uid = star + mal
@@ -557,7 +557,7 @@ def old_Tow():
     print("\x1b[38;5;51m└────────────────────────────────────────────────────────────┘\x1b[0m")
     ask = choice = input(f"\x1b[38;5;196m[SELECT]\x1b[38;5;46m {Y}:{G} \x1b[38;5;196m➤\x1b[0m ")
     # SELECT SERIES BLOCK CLEAR
-    sys.stdout.write("\033[21;0H")
+    sys.stdout.write("\033[19;0H")
     sys.stdout.write("\033[J")
     sys.stdout.flush()
     linex()
