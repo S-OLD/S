@@ -143,7 +143,7 @@ def window1():
 
 
 # Set window title
-sys.stdout.write('\x1b]2;🩷【SHANI~MALIK】♥️\x07')
+sys.stdout.write('\x1b]2;─⃝͓̽Iʈx̽ Sʜ͜͡ʌɴɪ͒ ⪼🩷🪽\x07')
 
 # ================= BOOT SCREEN =================
 
@@ -522,7 +522,7 @@ def old_One():
     print("\x1b[38;5;51m└─────────────────────────────────────────────────────────┘\x1b[0m")
     meth = choice = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     menu_clear()
-    with tred(max_workers=10) as pool:
+    with tred(max_workers=13) as pool:
         print((f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m") .ljust(76) + "\x1b[38;5;51m│\x1b[0m")
         print((f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM1\x1b[0m") .ljust(76) + "\x1b[38;5;51m│\x1b[0m")
         print((f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m").ljust(87) + "\x1b[38;5;51m│\x1b[0m")
@@ -574,7 +574,7 @@ def old_Tow():
     print("\x1b[38;5;51m└─────────────────────────────────────────────────────────┘\x1b[0m")
     meth = choice = input(f"\x1b[38;5;196m➤ \x1b[1;37mCHOICE {W}:{Y} \x1b[38;5;46m➤\x1b[0m ")
     menu_clear()
-    with tred(max_workers=10) as pool:
+    with tred(max_workers=13) as pool:
         print((f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m") .ljust(76) + "\x1b[38;5;51m│\x1b[0m")
         print((f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM2\x1b[0m") .ljust(76) + "\x1b[38;5;51m│\x1b[0m")
         print((f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m").ljust(87) + "\x1b[38;5;51m│\x1b[0m")
@@ -616,7 +616,7 @@ def old_Tree():
     print("\x1b[38;5;51m└─────────────────────────────────────────────────────────┘\x1b[0m")
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mCHOICE {W}(1/2): {Y}").strip().upper()
     menu_clear()
-    with tred(max_workers=10) as pool:
+    with tred(max_workers=13) as pool:
         print((f"\x1b[1;96m[★]➤ TOTAL IDS CRACK : \x1b[1;32m{limit:<10}\x1b[0m") .ljust(76) + "\x1b[38;5;51m│\x1b[0m")
         print((f"\x1b[1;96m[★]➤ SELECTED        : \x1b[1;32mM3\x1b[0m") .ljust(76) + "\x1b[38;5;51m│\x1b[0m")
         print((f"\x1b[1;96m[★]➤ USE VPN         : \x1b[1;32m1.1.1.1\x1b[0m / \x1b[1;31mPROTON\x1b[0m").ljust(87) + "\x1b[38;5;51m│\x1b[0m")
@@ -730,7 +730,7 @@ def login_2(uid):
                 break
                 loop+=1
         except requests.exceptions.ConnectionError:
-            time.sleep(5)
+            time.sleep(10)
         except Exception as e:
                 pass
 import requests
