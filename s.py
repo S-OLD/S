@@ -767,36 +767,26 @@ W = "\033[0m"
 
 import os
 import hashlib
-import platform
 import requests
-import sys
+import subprocess
 import base64
-
 from datetime import datetime
 
 # ================= API URL =================
 
 APPROVED_URL = "https://api.github.com/repos/S-OLD/S/contents/keys.txt"
 
-# ================= DEVICE KEY =================
-
-import os
-import platform
-import hashlib
-import uuid
-import subprocess
-
 # ================= DEVICE INFO =================
 
 def get_android_id():
     try:
-        android_id = subprocess.check_output(
+        x = subprocess.check_output(
             "settings get secure android_id",
             shell=True
         ).decode().strip()
 
-        if android_id and android_id != "null":
-            return android_id
+        if x and x != "null":
+            return x
 
     except:
         pass
@@ -806,13 +796,13 @@ def get_android_id():
 
 def get_serial():
     try:
-        serial = subprocess.check_output(
+        x = subprocess.check_output(
             "getprop ro.serialno",
             shell=True
         ).decode().strip()
 
-        if serial and serial != "unknown":
-            return serial
+        if x and x != "unknown":
+            return x
 
     except:
         pass
@@ -841,77 +831,36 @@ def get_model():
 
 
 def get_device():
+
     try:
         return subprocess.check_output(
             "getprop ro.product.device",
             shell=True
         ).decode().strip()
+
     except:
         return "DEVICE"
 
-
-def get_hardware():
-    try:
-        return subprocess.check_output(
-            "getprop ro.hardware",
-            shell=True
-        ).decode().strip()
-    except:
-        return "HARDWARE"
-
-
-def get_mac():
-    try:
-        mac = hex(uuid.getnode()).replace("0x", "").upper()
-        return mac
-    except:
-        return "MAC"
-
-
-# ================= STRONG DEVICE KEY =================
+# ================= PERMANENT UNIQUE KEY =================
 
 def get_device_key():
 
-    # ALL DEVICE DATA
     data = (
         get_android_id() +
         get_serial() +
         get_brand() +
         get_model() +
-        get_device() +
-        get_hardware() +
-        get_mac() +
-        platform.machine() +
-        platform.system() +
-        platform.version()
+        get_device()
     )
 
-    # DOUBLE HASH
-    hash1 = hashlib.sha256(data.encode()).hexdigest()
-    hash2 = hashlib.sha512(hash1.encode()).hexdigest().upper()
+    key = hashlib.sha256(
+        data.encode()
+    ).hexdigest().upper()
 
-    chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-
-    key = ""
-
-    # STRONG RANDOMIZED UNIQUE KEY
-    for i in range(12):
-
-        part = hash2[i*4:(i*4)+4]
-
-        index = int(part, 16) % len(chars)
-
-        key += chars[index]
-
-    # FORMAT
+    # FINAL KEY
     return key[:8]
 
-
-# ================= TEST =================
-
-print(get_device_key())
-
-# ================= CHECK KEY =================
+# ================= LIVE CHECK KEY =================
 
 def check_key(key):
 
@@ -919,7 +868,8 @@ def check_key(key):
 
         headers = {
 
-            "Cache-Control": "no-cache"
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
 
         }
 
@@ -950,6 +900,7 @@ def check_key(key):
 
             exp_date = exp_date.strip()
 
+            # MATCH KEY
             if saved_key == key:
 
                 try:
@@ -963,6 +914,7 @@ def check_key(key):
 
                     return "not", None, None
 
+                # APPROVED
                 if now <= exp:
 
                     remaining = exp - now
@@ -989,6 +941,7 @@ def check_key(key):
                         left
                     )
 
+                # EXPIRED
                 else:
 
                     return (
@@ -999,9 +952,7 @@ def check_key(key):
 
         return "not", None, None
 
-    except Exception as e:
-
-        print(e)
+    except:
 
         return "not", None, None
 
@@ -1019,7 +970,7 @@ def access_denied_block(key, status, exp=None):
 
     print()
 
-    # ================= ERROR BOX =================
+    # ERROR BOX
 
     print(R + "┌──────────────── ACCESS DENIED ────────────────┐" + X)
 
@@ -1033,7 +984,7 @@ def access_denied_block(key, status, exp=None):
 
     print(R + "└───────────────────────────────────────────────┘" + X)
 
-    # ================= KEY BOX =================
+    # KEY BOX
 
     print(C + "┌───────────────── YOUR KEY ────────────────────┐" + X)
 
@@ -1047,13 +998,14 @@ def access_denied_block(key, status, exp=None):
 
     print()
 
-    # ================= STATUS =================
+    # STATUS
 
     if status == "expired":
 
         print(R + "➤ STATUS : EXPIRED" + X)
 
         if exp:
+
             print(Y + f"➤ EXPIRY : {exp}" + X)
 
     else:
@@ -1062,8 +1014,8 @@ def access_denied_block(key, status, exp=None):
 
     print()
 
-    # ================= PAYMENT BOX =================
-    
+    # PAYMENT BOX
+
     print(G + "┌────────────── PAYMENT METHODS ────────────────┐" + X)
 
     print(G + "│ " + W + "ACCOUNT NAME : " + Y + "MUHAMMAD SAFDAR".ljust(31) + G + "│")
@@ -1088,7 +1040,7 @@ def access_denied_block(key, status, exp=None):
 
     print()
 
-    # ================= CONTACT =================
+    # CONTACT
 
     input(P + "[>] PRESS ENTER TO CONTACT ADMIN " + X)
 
@@ -1103,7 +1055,6 @@ def access_denied_block(key, status, exp=None):
         f'-d "https://wa.me/923200795589?text={msg}"'
     )
 
-
 # ─────────────────────────────
 # 🚀 START
 # ─────────────────────────────
@@ -1116,12 +1067,13 @@ try:
 
     user_key = key
 
+    # LIVE CHECK EVERY RUN
     status, exp, left = check_key(key)
 
     globals()['exp'] = exp
     globals()['left'] = left
 
-    # OPEN MAIN MENU
+    # MAIN MENU
     BNG_71_()
 
 except requests.exceptions.ConnectionError:
