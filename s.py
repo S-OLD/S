@@ -507,7 +507,9 @@ def old_One():
     ask = choice = input(f"\x1b[38;5;196m➤\x1b[1;37m CHOICE {W}:{Y} \x1b[38;5;46m➤➤\x1b[0m ")
     # SELECT SERIES BLOCK CLEAR
     menu_clear()
-    sys.stdout.write("\033[H")
+    sys.stdout.write("\033[19;0H")
+    sys.stdout.write("\033[K")
+    sys.stdout.write("\033[J")
     sys.stdout.flush()
     print("\x1b[38;5;51m├───────────────────── LIMIT MENU ────────────────────────┤\x1b[0m")
     print("\x1b[38;5;51m│ EXAMPLE : 20000 • 30000 • 99999".ljust(68) + "│\x1b[0m")
