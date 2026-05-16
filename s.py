@@ -562,7 +562,6 @@ def old_Tow():
     print("\x1b[38;5;51m└─────────────────────────────────────────────────────────┘\x1b[0m")
     limit =  choice = input(f"\x1b[38;5;196m[SELECT]\x1b[38;5;46m {Y}:{G} \x1b[38;5;196m➤\x1b[0m ")
     menu_clear()
-    linex()
     prefixes = ['100004', '100004']
     for _ in range(int(limit)):
         prefix = random.choice(prefixes)
@@ -606,7 +605,6 @@ def old_Tree():
     print("\x1b[38;5;51m└─────────────────────────────────────────────────────────┘\x1b[0m")
     limit = input(f"\x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mTOTAL ID COUNT {Y}:{G} ")
     menu_clear()
-    linex()
     prefix = '1000004'
     for _ in range(int(limit)):
         suffix = ''.join(random.choices('0123456789', k=8))
@@ -732,7 +730,7 @@ def login_2(uid):
                 break
                 loop+=1
         except requests.exceptions.ConnectionError:
-            time.sleep(10)
+            time.sleep(5)
         except Exception as e:
                 pass
 import requests
