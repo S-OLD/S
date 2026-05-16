@@ -1063,18 +1063,35 @@ try:
 
     boot_screen()
 
-    key = get_device_key()
+    while True:
 
-    user_key = key
+        key = get_device_key()
 
-    # LIVE CHECK EVERY RUN
-    status, exp, left = check_key(key)
+        user_key = key
 
-    globals()['exp'] = exp
-    globals()['left'] = left
+        status, exp, left = check_key(key)
 
-    # MAIN MENU
-    BNG_71_()
+        globals()['exp'] = exp
+        globals()['left'] = left
+
+        # KEY APPROVED
+        if status == "approved":
+
+            BNG_71_()
+
+            break
+
+        # KEY NOT APPROVED / EXPIRED
+        else:
+
+            access_denied_block(
+                key,
+                status,
+                exp
+            )
+
+            # دوبارہ GitHub check کرے
+            continue
 
 except requests.exceptions.ConnectionError:
 
