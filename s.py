@@ -1063,7 +1063,9 @@ def access_denied_block(key, status, exp=None):
     print()
 
     # ================= PAYMENT BOX =================
-
+def payment_box():
+    pass
+    
     print(G + "┌────────────── PAYMENT METHODS ────────────────┐" + X)
 
     print(G + "│ " + W + "ACCOUNT NAME : " + Y + "MUHAMMAD SAFDAR".ljust(31) + G + "│")
