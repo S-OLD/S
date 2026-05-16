@@ -508,7 +508,6 @@ def old_One():
     # SELECT SERIES BLOCK CLEAR
     sys.stdout.write("\033[19;0H")
     sys.stdout.write("\033[2K")
-    sys.stdout.write("\033[1B")
     sys.stdout.write("\033[2K")
     sys.stdout.write("\033[J")
     sys.stdout.flush()
