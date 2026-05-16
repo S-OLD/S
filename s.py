@@ -904,7 +904,7 @@ def get_device_key():
         key += chars[index]
 
     # FORMAT
-    return f"{key[:4]}-{key[4:8]}-{key[8:12]}"
+    return key[:8]
 
 
 # ================= TEST =================
