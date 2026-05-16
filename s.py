@@ -216,9 +216,8 @@ def boot_screen():
 # ================= MAIN BANNER =================
 import sys
 def menu_clear():
-    # Banner + Main menu ko chor kar baqi clear karega
-    sys.stdout.write("\033[28;0H")
-    sys.stdout.write("\033[J")
+    sys.stdout.write("\033[24;0H")
+    sys.stdout.write("\033[K")
     sys.stdout.flush()
 def ____banner____():
 
