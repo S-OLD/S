@@ -1062,9 +1062,10 @@ def access_denied_block(key, status, exp=None):
 
     print()
 
-    # ================= PAYMENT BOX =================
-def payment_box():
+    def payment_box():
     pass
+
+    # ================= PAYMENT BOX =================
     
     print(G + "┌────────────── PAYMENT METHODS ────────────────┐" + X)
 
