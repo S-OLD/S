@@ -780,13 +780,20 @@ APPROVED_URL = "https://api.github.com/repos/S-OLD/S/contents/keys.txt"
 
 # ================= DEVICE KEY =================
 
+import os
+import platform
+import hashlib
+import uuid
+import subprocess
+
+# ================= DEVICE INFO =================
+
 def get_android_id():
-
     try:
-
-        android_id = os.popen(
-            "settings get secure android_id"
-        ).read().strip()
+        android_id = subprocess.check_output(
+            "settings get secure android_id",
+            shell=True
+        ).decode().strip()
 
         if android_id and android_id != "null":
             return android_id
@@ -794,38 +801,115 @@ def get_android_id():
     except:
         pass
 
-    return "ANDROID"
+    return "ANDROID_ID"
 
+
+def get_serial():
+    try:
+        serial = subprocess.check_output(
+            "getprop ro.serialno",
+            shell=True
+        ).decode().strip()
+
+        if serial and serial != "unknown":
+            return serial
+
+    except:
+        pass
+
+    return "SERIAL"
+
+
+def get_brand():
+    try:
+        return subprocess.check_output(
+            "getprop ro.product.brand",
+            shell=True
+        ).decode().strip()
+    except:
+        return "BRAND"
+
+
+def get_model():
+    try:
+        return subprocess.check_output(
+            "getprop ro.product.model",
+            shell=True
+        ).decode().strip()
+    except:
+        return "MODEL"
+
+
+def get_device():
+    try:
+        return subprocess.check_output(
+            "getprop ro.product.device",
+            shell=True
+        ).decode().strip()
+    except:
+        return "DEVICE"
+
+
+def get_hardware():
+    try:
+        return subprocess.check_output(
+            "getprop ro.hardware",
+            shell=True
+        ).decode().strip()
+    except:
+        return "HARDWARE"
+
+
+def get_mac():
+    try:
+        mac = hex(uuid.getnode()).replace("0x", "").upper()
+        return mac
+    except:
+        return "MAC"
+
+
+# ================= STRONG DEVICE KEY =================
 
 def get_device_key():
 
-    android_id = get_android_id()
-
-    base = (
-        android_id +
+    # ALL DEVICE DATA
+    data = (
+        get_android_id() +
+        get_serial() +
+        get_brand() +
+        get_model() +
+        get_device() +
+        get_hardware() +
+        get_mac() +
         platform.machine() +
-        platform.system()
+        platform.system() +
+        platform.version()
     )
 
-    hash_val = hashlib.sha256(
-        base.encode()
-    ).hexdigest().upper()
+    # DOUBLE HASH
+    hash1 = hashlib.sha256(data.encode()).hexdigest()
+    hash2 = hashlib.sha512(hash1.encode()).hexdigest().upper()
 
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
     key = ""
 
-    # SHORT UNIQUE KEY
-    for i in range(6):
+    # STRONG RANDOMIZED UNIQUE KEY
+    for i in range(12):
 
-        part = hash_val[i*4:(i*4)+4]
+        part = hash2[i*4:(i*4)+4]
 
         index = int(part, 16) % len(chars)
 
         key += chars[index]
 
-    return f"S-{key}"
+    # FORMAT
+    return f"{key[:4]}-{key[4:8]}-{key[8:12]}"
 
+
+# ================= TEST =================
+
+print(get_device_key())
 
 # ================= CHECK KEY =================
 
